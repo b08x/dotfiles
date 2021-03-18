@@ -73,7 +73,6 @@ ENABLE_CORRECTION="true"
 plugins=(git ruby rsync ripgrep history github fzf docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
-
 #echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 
 # User configuration

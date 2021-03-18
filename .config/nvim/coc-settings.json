@@ -1,0 +1,14 @@
+{
+
+  "languageserver": {
+    "bash": {
+      "command": "/usr/local/bin/bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+
+  },
+  "solargraph.commandPath": "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/solargraph",
+  "codeLens.enable" :true
+}
