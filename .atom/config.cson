@@ -1,0 +1,25 @@
+"*":
+  "atom-beautify":
+    executables:
+      rubocop:
+        path: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/rubocop"
+  core:
+    telemetryConsent: "limited"
+  "exception-reporting":
+    userId: "590ef208-4d99-430d-8c29-fb4bd664dfd7"
+  "open-terminal-here":
+    command: "terminator -T \"atom\""
+  "ruby-solargraph":
+    commandPath: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/solargraph"
+  "file-types":
+    "**/.config.d/*": "source.shell"
+    "**/.config/sway/**": "source.shell"
+    "*.cfg": "source.shell"
+    "*.conf": "source.shell"
+    "*.j2": "source.ansible-advanced"
+    "*.rules": "source.shell"
+    "*.yml": "source.ansible-advanced"
+    "*config": "source.shell"
+    ".zsh*": "source.shell"
+  welcome:
+    showOnStartup: false

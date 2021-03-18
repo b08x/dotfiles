@@ -61,5 +61,5 @@ alias d='dig +nocmd +multiline +noall +answer'
 alias cpup="sudo cpupower -c all frequency-set -g performance"
 
 alias vim="nvim"
-
+alias svim="sudo nvim"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
