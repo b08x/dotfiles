@@ -10,12 +10,12 @@
 configuration {
     lines:							10;
     columns:						2;
-    font: 							"Iosevka Nerd Font 12";
+    font: 							"BlexMono Nerd Font 12";
     bw: 							0;
     location: 						0;
     padding: 						0;
     fixed-num-lines: 				true;
-    show-icons: 					false;
+    show-icons: 					true;
     sidebar-mode: 					true;
     separator-style: 				"none";
     hide-scrollbar: 				true;
@@ -134,7 +134,10 @@ element alternate.active {
     background-color: 				@bg;
     text-color:       				@fg;
 }
-
+element-icon {
+    size:                           64px;
+    border:                         0px;
+}
 sidebar {
     border:       					0px;
     border-color: 					@ac;
