@@ -26,6 +26,7 @@
     "*.yml": "source.ansible-advanced"
     "*config": "source.shell"
     ".zsh*": "source.shell"
+  "git-tools": {}
   "one-dark-ui":
     stickyHeaders: true
   "open-terminal-here":

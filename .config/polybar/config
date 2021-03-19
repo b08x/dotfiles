@@ -18,20 +18,20 @@
 ;
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #ff252a36
+background = #0a0909
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #7B9F35
+foreground = #2fddc8
 foreground-alt = #0a81f5
 ;foreground-alt = #555
 primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+secondary = #b13964
+alert = #c63549
 
 [bar/default]
-;monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:HDMI1}
 width = 100%
-height = 21
+height = 22
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 5
@@ -52,15 +52,14 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = NotoSans-Regular:size=11;2
+font-0 = BlexMono Nerd Font:size=11:weight=bold;2
 font-1 = MaterialIcons:size=11;2
-font-2 = Termsynu:size=8:antialias=false;-2
+font-2 = Anonymice:size=8:antialias=false;-2
 font-3 = FontAwesome:size=11;3
 
-
 modules-left = i3
-modules-center = date
-modules-right = battery cpu temperature filesystem backlight-acpi
+modules-center = xwindow alsa
+modules-right = powermenu date
 
 tray-position = right
 tray-padding = 2
@@ -79,42 +78,82 @@ scroll-down = i3wm-wsprev
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[bar/tall]
+monitor = ${env:MONITOR:HDMI2}
+width = 100%
+height = 22
+;offset-x = 1%
+;offset-y = 1%
+radius = 5
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = BlexMono Nerd Font:size=11:weight=bold;2
+font-1 = MaterialIcons:size=11;2
+font-2 = Anonymice:size=8:antialias=false;-2
+font-3 = FontAwesome:size=11;3
+
+modules-left = i3
+modules-center = xwindow
+modules-right = alsa
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+wm-restack = i3
+;override-redirect = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
 
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
-;strip-wsnumbers = true  ;This will split the workspace name on ':'
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;♟
-ws-icon-8 = 9;♟
-ws-icon-default = ♟
+wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %icon%
+label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
-; unfocused = Inactive workspace on any monitor
 
-label-unfocused = %icon%
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %icon%
+label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
@@ -125,9 +164,52 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-;label-separator = |
+; label-separator = |
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+;sink = jack_out
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
 
 [module/memory]
 type = internal/memory
@@ -163,8 +245,6 @@ content-foreground = #8d62a9
 content-background = #292d3e
 
 
-
-
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -194,8 +274,6 @@ ramp-0 =
 ramp-1 =
 ramp-2 =
 ramp-foreground = ${colors.foreground-alt}
-
-
 
 [module/wlan]
 type = internal/network
@@ -247,37 +325,6 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 label = %date% %time%
 
-
-;[module/battery]
-;type = internal/battery
-;battery = BAT0
-;adapter = AC0
-;full-at = 98
-;format-charging = <animation-charging> <label-charging>
-;format-charging-underline = #ffb52a
-;format-discharging = <animation-discharging> <label-discharging>
-;format-discharging-underline = ${self.format-charging-underline}
-;format-full-prefix = " "
-;format-full-prefix-foreground = ${colors.foreground-alt}
-;format-full-underline = ${self.format-charging-underline}
-;
-;ramp-capacity-0 = 
-;ramp-capacity-1 = 
-;ramp-capacity-2 = 
-;ramp-capacity-foreground = ${colors.foreground-alt}
-;
-;animation-charging-0 = 
-;animation-charging-1 = 
-;animation-charging-2 = 
-;animation-charging-foreground = ${colors.foreground-alt}
-;animation-charging-framerate = 750
-;
-;animation-discharging-0 = 
-;animation-discharging-1 = 
-;animation-discharging-2 = 
-;animation-discharging-foreground = ${colors.foreground-alt}
-;animation-discharging-framerate = 750
-
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -294,67 +341,28 @@ margin-bottom = 0
 
 
 
-;[module/bspwm]
-;type = internal/bspwm
-;
-;label-focused = %index%
-;label-focused-background = ${colors.background-alt}
-;label-focused-underline= ${colors.primary}
-;label-focused-padding = 2
-;
-;label-occupied = %index%
-;label-occupied-padding = 2
-;
-;label-urgent = %index%!
-;label-urgent-background = ${colors.alert}
-;label-urgent-padding = 2
-;
-;label-empty = %index%
-;label-empty-foreground = ${colors.foreground-alt}
-;label-empty-padding = 2
+[module/powermenu]
+type = custom/menu
+expand-right = true
+format-spacing = 1
+label-open = Power
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
 
-; Separator in between workspaces
-; label-separator = |
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
 
-;[module/xbacklight]
-;type = internal/xbacklight
-;
-;format = <label> <bar>
-;label = BL
-;
-;bar-width = 10
-;bar-indicator = |
-;bar-indicator-foreground = #fff
-;bar-indicator-font = 2
-;bar-fill = ─
-;bar-fill-font = 2
-;bar-fill-foreground = #9f78e1
-;bar-empty = ─
-;bar-empty-font = 2
-;bar-empty-foreground = ${colors.foreground-alt}
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
 
-;[module/powermenu]
-;type = custom/menu
-;expand-right = true
-;format-spacing = 1
-;label-open = Power
-;label-open-foreground = ${colors.secondary}
-;label-close =  cancel
-;label-close-foreground = ${colors.secondary}
-;label-separator = |
-;label-separator-foreground = ${colors.foreground-alt}
-;
-;menu-0-0 = reboot
-;menu-0-0-exec = menu-open-1
-;menu-0-1 = power off
-;menu-0-1-exec = menu-open-2
-;
-;menu-1-0 = cancel
-;menu-1-0-exec = menu-open-0
-;menu-1-1 = reboot
-;menu-1-1-exec = sudo reboot
-;
-;menu-2-0 = power off
-;menu-2-0-exec = sudo poweroff
-;menu-2-1 = cancel
-;menu-2-1-exec = menu-open-0
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
