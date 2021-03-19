@@ -1,4 +1,4 @@
-include "$HOME/.gtkrc-2.0.mine"
+#include "$HOME/.gtkrc-2.0.mine"
 gtk-theme-name="oomox-eboda"
 gtk-icon-theme-name="Infinity-Dark-Icons"
 gtk-font-name="BlexMono Nerd Font 12"
