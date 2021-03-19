@@ -3,14 +3,19 @@
     executables:
       rubocop:
         path: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/rubocop"
+    general:
+      _analyticsUserId: "af1865d2-6aca-46f7-a3de-6aaef529e4e5"
   core:
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "vibrant-ink-ruby"
+    ]
+  editor:
+    fontFamily: "BlexMono Nerd Font"
+    fontSize: 16
   "exception-reporting":
     userId: "590ef208-4d99-430d-8c29-fb4bd664dfd7"
-  "open-terminal-here":
-    command: "terminator -T \"atom\""
-  "ruby-solargraph":
-    commandPath: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/solargraph"
   "file-types":
     "**/.config.d/*": "source.shell"
     "**/.config/sway/**": "source.shell"
@@ -21,5 +26,14 @@
     "*.yml": "source.ansible-advanced"
     "*config": "source.shell"
     ".zsh*": "source.shell"
+  "one-dark-ui":
+    stickyHeaders: true
+  "open-terminal-here":
+    command: "terminator -T \"atom\""
+  "ruby-solargraph":
+    commandPath: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/solargraph"
+  "seti-ui":
+    compactView: true
+    hideProjectTab: true
   welcome:
     showOnStartup: false
