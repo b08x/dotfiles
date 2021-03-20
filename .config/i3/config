@@ -201,22 +201,38 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always --no-startup-id xrandr --output HDMI2 --mode 1680x1050 --pos 1920x0 --rotate left --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal
+# class                 border  bground text    indicator child_border
+client.focused          #000000 #2F4F4F #EBF4BE #56F480   #010102
+client.focused_inactive #333333 #5F676A #a85858 #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #092890 #e23860 #d27979   #8c2f2f
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
+
+#exec_always --no-startup-id xrandr --output HDMI2 --mode 1680x1050 --pos 1920x0 --rotate left --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal
+
+exec_always --no-startup-id xrandr --output DVI-I-2 --mode 1920x1080 --pos 0x0 --rotate normal
 
 $autostart compton &
-$autostart polybar -r default
-$autostart polybar -r tall
+#$autostart polybar -r default
+#$autostart polybar -r tall
+$autostart polybar -r nvidia
 $autostart nitrogen --restore
 $autostart xmodmap -e "clear lock"
 $autostart xmodmap -e "keysym Caps_Lock = F13"
 $autostart numlockx on
-$autostart jack_control start
-$autostart a2j_control start
-$autostart pulseaudio --start
+#$autostart jack_control start
+#$autostart a2j_control start
+#$autostart pulseaudio --start
+$autostart raysession
 $autostart guake
-$autostart tilda
-$autostart radiotray
-$autostart deadbeef
+#$autostart tilda
+#$autostart radiotray
+#$autostart deadbeef
+
+# use -w to configure which workspaces would autotile
+exec '~/.config/i3/autotiling.py'
 
 bindsym $mod+Return exec terminator -b
 
@@ -234,5 +250,9 @@ bindsym XF86AudioPause $autostart deadbeef --toggle-pause
 bindsym XF86AudioNext $autostart deadbeef --next
 bindsym XF86AudioPrev $autostart deadbeef --previous
 
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 #Assign Workspaces:
 assign [class="^Deadbeef"] $ws10
+for_window [class="(?i)raysession"] floating enable
+for_window [class="(?i)sonic-pi"] border none
