@@ -28,6 +28,8 @@ fi
 
 unset _old_path
 
+export TERMINAL="terminator -b"
+
 export PAGER=less
 
 export NO_AT_BRIDGE=1 

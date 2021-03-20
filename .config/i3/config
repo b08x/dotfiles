@@ -203,7 +203,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  bground text    indicator child_border
-client.focused          #000000 #2F4F4F #EBF4BE #56F480   #010102
+client.focused          #000000 #2F4F4F #cbb907 #56F480   #010102
 client.focused_inactive #333333 #5F676A #a85858 #484E50   #5F676A
 client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #092890 #e23860 #d27979   #8c2f2f
@@ -233,7 +233,7 @@ $execute 'exec deadbeef'
 
 bindsym $mod+Return exec terminator -b
 
-bindsym $mod+d exec --no-startup-id "~/.config/rofi/bin/launcher_text"
+bindsym $mod+F13 exec --no-startup-id "~/.config/rofi/bin/launcher_text"
 bindsym $mod+Tab exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show window"
 
 bindsym $mod+Home $execute 'exec google-chrome-stable --proxy-server="127.0.0.1:8118"'
