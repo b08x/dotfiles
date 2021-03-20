@@ -7,7 +7,12 @@ set $alt Mod2
 
 set $autostart exec --no-startup-id
 set $execute exec i3-msg
-set $swallow "$HOME/.local/bin/swallow"
+
+set $i3home = "$HOME/.config/i3"
+
+set $swallow "/usr/local/bin/swallow"
+
+set $hosthelper $i3home/hosthelper.rb
 
 font pango:BlexMono Nerd Font 11
 
@@ -178,7 +183,9 @@ $execute 'exec $swallow -d python3 $HOME/.config/i3/autotiling.py'
 ######################################
 # ---{ host specific autostart }---
 ######################################
-$execute 'exec'
+
+$execute 'exec $hosthelper'
+
 ######################################
 # ---{ application key bindings }---
 ######################################

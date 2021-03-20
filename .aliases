@@ -64,3 +64,5 @@ alias vim="nvim"
 alias svim="sudo nvim"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dots='dotfiles'
+alias dotss='dots status'
+
