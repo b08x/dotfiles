@@ -29,7 +29,7 @@ command -v exa       &> /dev/null    && alias ll="ls -lasnew"
 alias nocomment='grep -v "^\($\|#\)"'
 
 #alias service='sudo systemctl'
-#alias checklog='sudo journalctl -S today | lnav'
+alias checklog='sudo lnav -r /var/log'
 #alias taillog='sudo journalctl -f | lnav'
 
 #alias netlog='journalctl -b -o short-monotonic --no-hostname -u systemd-udevd -u systemd-networkd -f'
