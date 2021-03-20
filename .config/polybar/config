@@ -61,12 +61,12 @@ font-1 = MaterialIcons:size=11;2
 font-2 = Anonymice:size=8:antialias=false;-2
 font-3 = FontAwesome:size=11;3
 
-modules-left = i3 xwindow
-;modules-center =
-modules-right = alsa date
+modules-left = i3
+modules-center = xwindow
+modules-right = pulseaudio alsa date
 
-;tray-position = right
-;tray-padding = 1
+tray-position = right
+tray-padding = 1
 ;tray-background = #141414
 
 wm-restack = i3
@@ -80,7 +80,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
 
 [module/i3]
 type = internal/i3
@@ -128,7 +128,7 @@ label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -147,6 +147,52 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-volume = <ramp-volume> <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+label-muted = muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+;ramp-volume-0 = 🔈
+;ramp-volume-1 = 🔉
+;ramp-volume-2 = 🔊
+
+; Right and Middle click
+click-right = terminator -e pulsemixer
+; click-middle =
 
 [module/memory]
 type = internal/memory

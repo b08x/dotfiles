@@ -15,6 +15,7 @@ set $alt Mod2
 
 set $autostart exec --no-startup-id
 set $execute exec i3-msg
+set $swallow "$HOME/.local/bin/swallow"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -215,24 +216,20 @@ client.background       #FFFFFF
 exec_always --no-startup-id xrandr --output DVI-I-2 --mode 1920x1080 --pos 0x0 --rotate normal
 
 $autostart compton &
-#$autostart polybar -r default
-#$autostart polybar -r tall
-$autostart polybar -r nvidia
 $autostart nitrogen --restore
 $autostart xmodmap -e "clear lock"
 $autostart xmodmap -e "keysym Caps_Lock = F13"
 $autostart numlockx on
-#$autostart jack_control start
-#$autostart a2j_control start
-#$autostart pulseaudio --start
-$autostart raysession
-$autostart guake
-#$autostart tilda
-#$autostart radiotray
-#$autostart deadbeef
 
+$autostart ray_control open_session start
+$autostart pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1
+$autostart guake
 # use -w to configure which workspaces would autotile
-exec '~/.config/i3/autotiling.py'
+$execute 'exec $swallow -d python3 $HOME/.config/i3/autotiling.py'
+
+$execute 'exec sleep 2 && $swallow -d polybar -r nvidia'
+
+$execute 'exec deadbeef'
 
 bindsym $mod+Return exec terminator -b
 
@@ -245,10 +242,10 @@ bindcode $mod+Mod2+$KP_Enter $execute 'exec guake --show -n 'ranger' -e ranger'
 bindsym $mod+g $execute 'exec guake --show -n 'goog' -e googler'
 bindsym $mod+Insert $execute 'exec zim --plugin quicknote'
 
-bindsym XF86AudioPlay $autostart deadbeef --play
-bindsym XF86AudioPause $autostart deadbeef --toggle-pause
-bindsym XF86AudioNext $autostart deadbeef --next
-bindsym XF86AudioPrev $autostart deadbeef --previous
+bindsym XF86AudioPlay deadbeef --play
+bindsym XF86AudioPause deadbeef --toggle-pause
+bindsym XF86AudioNext deadbeef --next
+bindsym XF86AudioPrev deadbeef --previous
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable

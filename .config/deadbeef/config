@@ -93,7 +93,7 @@ playlist.current 3
 playlist.cursor.0 0
 playlist.cursor.1 -1
 playlist.cursor.2 0
-playlist.cursor.3 0
+playlist.cursor.3 1
 playlist.cursor.4 0
 playlist.cursor.5 0
 playlist.pin.groups 1
