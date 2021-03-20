@@ -17,11 +17,11 @@
 ;==========================================================
 ;
 [colors]
-;background = ${xrdb:color0:#222}
-background = #0a0909
+;background = ${xrdb:color0:rgba(#000000, 1)}
+background = #141414
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #2fddc8
+foreground = #8c3232
 foreground-alt = #0a81f5
 ;foreground-alt = #555
 primary = #ffb52a
@@ -31,7 +31,7 @@ alert = #c63549
 [bar/default]
 monitor = ${env:MONITOR:HDMI1}
 width = 100%
-height = 22
+height = 24
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 5
@@ -46,6 +46,9 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
+# border-size = 5
+# border-color = #ff0000
+
 padding-left = 0
 padding-right = 0
 
@@ -57,20 +60,16 @@ font-1 = MaterialIcons:size=11;2
 font-2 = Anonymice:size=8:antialias=false;-2
 font-3 = FontAwesome:size=11;3
 
-modules-left = i3
-modules-center = xwindow alsa
-modules-right = powermenu date
+modules-left = i3 xwindow
+modules-center = alsa
+modules-right = date
 
 tray-position = right
-tray-padding = 2
-;tray-background = #0063ff
+tray-padding = 1
+tray-background = #141414
 
-;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 ;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -111,10 +110,7 @@ modules-left = i3
 modules-center = xwindow
 modules-right = alsa
 
-tray-position = right
-tray-padding = 2
-;tray-background = #0063ff
-
+tray-position = none
 wm-restack = i3
 ;override-redirect = true
 
@@ -123,7 +119,6 @@ scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
 
 [module/xwindow]
 type = internal/xwindow
@@ -195,22 +190,6 @@ bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
-; If not, uses default sink
-;sink = jack_out
-
-; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
-; Default: true
-use-ui-max = true
-
-; Interval for volume increase/decrease (in percent points)
-; Default: 5
-interval = 5
-
 [module/memory]
 type = internal/memory
 interval = 2
@@ -228,13 +207,11 @@ label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 
-
 [module/backlight-acpi]
 ;inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 label =  %percentage%%
-
 
 [module/arrow1]
 ; grey to Blue
@@ -244,7 +221,6 @@ content-font = 2
 content-foreground = #8d62a9
 content-background = #292d3e
 
-
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -252,7 +228,6 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
-
 
 [module/temperature]
 type = internal/temperature
@@ -316,9 +291,9 @@ format-disconnected =
 [module/date]
 type = internal/date
 interval = 5
-date = %a %B-%d
+date = %D
 date-alt =%b-%d(%a)
-time = %r
+time = %R
 time-alt =%r
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}

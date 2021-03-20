@@ -11,6 +11,10 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod2
+
+set $autostart exec --no-startup-id
+set $execute exec i3-msg
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -45,6 +49,8 @@ bindsym $mod+q kill
 #bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec --no-startup-id "rofi -show drun -eh 2 -theme-str 'element-icon { size: 2ch;}'"
 bindsym $mod+d exec --no-startup-id "~/.config/rofi/bin/launcher_text"
+
+bindsym $mod+Tab exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show window"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -212,26 +218,22 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id xrandr --output HDMI2 --mode 1680x1050 --pos 1920x0 --rotate left --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal
-exec_always --no-startup-id compton &
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-exec --no-startup-id polybar -r default
-exec --no-startup-id polybar -r tall
-exec --no-startup-id nitrogen --restore
-#exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
-exec --no-startup-id xmodmap -e "keysym Caps_Lock = F13" #set caps_lock as escape
-exec --no-startup-id numlockx on
 
-exec --no-startup-id jack_control start
-exec --no-startup-id a2j_control start
-exec --no-startup-id pulseaudio --start
+$autostart compton &
+$autostart polybar -r default
+$autostart polybar -r tall
+$autostart nitrogen --restore
+$autostart xmodmap -e "clear lock"
+$autostart xmodmap -e "keysym Caps_Lock = F13"
+$autostart numlockx on
+$autostart jack_control start
+$autostart a2j_control start
+$autostart pulseaudio --start
+$autostart guake
+$autostart tilda
 
-exec --no-startup-id guake
-exec --no-startup-id tilda
+bindsym $mod+Home $execute 'exec google-chrome-stable --proxy-server="127.0.0.1:8118"'
+bindcode $mod+Mod2+$KP_Enter $execute 'exec guake --show -n 'ranger' -e ranger'
 
-bindsym $mod+Home exec google-chrome-stable --proxy-server="127.0.0.1:8118"
-bindcode $mod+Mod2+$KP_Enter exec i3-sensible-terminal -e ranger
-
-bindsym $mod+g exec "guake -e googler && guake --show"
-bindsym $mod+Insert exec "zim --plugin quicknote"
+bindsym $mod+g $execute 'exec guake --show -n 'goog' -e googler'
+bindsym $mod+Insert $execute "zim --plugin quicknote"
