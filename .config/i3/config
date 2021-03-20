@@ -215,6 +215,8 @@ $autostart a2j_control start
 $autostart pulseaudio --start
 $autostart guake
 $autostart tilda
+$autostart radiotray
+$autostart deadbeef
 
 bindsym $mod+Return exec terminator -b
 
@@ -226,3 +228,11 @@ bindcode $mod+Mod2+$KP_Enter $execute 'exec guake --show -n 'ranger' -e ranger'
 
 bindsym $mod+g $execute 'exec guake --show -n 'goog' -e googler'
 bindsym $mod+Insert $execute "zim --plugin quicknote"
+
+bindsym XF86AudioPlay $autostart deadbeef --play
+bindsym XF86AudioPause $autostart deadbeef --toggle-pause
+bindsym XF86AudioNext $autostart deadbeef --next
+bindsym XF86AudioPrev $autostart deadbeef --previous
+
+#Assign Workspaces:
+assign [class="^Deadbeef"] $ws10

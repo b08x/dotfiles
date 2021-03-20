@@ -61,10 +61,10 @@ font-2 = Anonymice:size=8:antialias=false;-2
 font-3 = FontAwesome:size=11;3
 
 modules-left = i3 xwindow
-modules-center = alsa
-modules-right = date
+;modules-center = 
+modules-right = alsa date
 
-tray-position = right
+tray-position = center
 tray-padding = 1
 tray-background = #141414
 
