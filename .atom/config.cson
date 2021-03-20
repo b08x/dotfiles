@@ -5,6 +5,8 @@
         path: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/rubocop"
     general:
       _analyticsUserId: "af1865d2-6aca-46f7-a3de-6aaef529e4e5"
+  "autocomplete-plus":
+    confirmCompletion: "tab"
   core:
     telemetryConsent: "limited"
     themes: [
@@ -14,6 +16,10 @@
   editor:
     fontFamily: "BlexMono Nerd Font"
     fontSize: 16
+    preferredLineLength: 70
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "590ef208-4d99-430d-8c29-fb4bd664dfd7"
   "file-types":
