@@ -243,7 +243,7 @@ bindsym $mod+Home $execute 'exec google-chrome-stable --proxy-server="127.0.0.1:
 bindcode $mod+Mod2+$KP_Enter $execute 'exec guake --show -n 'ranger' -e ranger'
 
 bindsym $mod+g $execute 'exec guake --show -n 'goog' -e googler'
-bindsym $mod+Insert $execute "zim --plugin quicknote"
+bindsym $mod+Insert $execute 'exec zim --plugin quicknote'
 
 bindsym XF86AudioPlay $autostart deadbeef --play
 bindsym XF86AudioPause $autostart deadbeef --toggle-pause
