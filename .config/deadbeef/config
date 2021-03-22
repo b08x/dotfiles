@@ -97,14 +97,14 @@ playlist.current 3
 playlist.cursor.0 0
 playlist.cursor.1 -1
 playlist.cursor.2 0
-playlist.cursor.3 0
+playlist.cursor.3 2999
 playlist.cursor.4 0
 playlist.cursor.5 0
 playlist.pin.groups 1
 playlist.scroll.0 0
 playlist.scroll.1 0
 playlist.scroll.2 0
-playlist.scroll.3 0
+playlist.scroll.3 77320
 playlist.scroll.4 0
 playlist.scroll.5 0
 playlist.scroll.cursorfollowplayback 1
@@ -118,8 +118,8 @@ prefwin.geometry.x 361
 prefwin.geometry.y 113
 resume.paused 0
 resume.playlist 3
-resume.position 113.68540
-resume.track 0
+resume.position 222.24693
+resume.track 2999
 spectrogram.color.gradient_00 65535 0 0
 spectrogram.color.gradient_01 65535 32896 0
 spectrogram.color.gradient_02 65535 65535 0
