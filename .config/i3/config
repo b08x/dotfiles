@@ -12,7 +12,7 @@ set $i3home = "$HOME/.config/i3"
 
 set $swallow "/usr/local/bin/swallow"
 
-set $hosthelper $i3home/hosthelper.rb
+set $autostart "$HOME/.config/i3/autostart.rb"
 
 font pango:BlexMono Nerd Font 11
 
@@ -166,6 +166,10 @@ client.background       #FFFFFF
 ######################################
 # ---{ autostart }---
 ######################################
+exec compton
+exec_always --no-startup-id xmodmap -e "clear lock"
+exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = F13"
+exec_always --no-startup-id numlockx on
 
 $execute 'exec $autostart'
 

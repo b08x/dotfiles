@@ -13,10 +13,6 @@ fi
 #setxkbmap -option grp:alt_shift_toggle us,it
 
 #sh ./.fehbg &
-compton &
-xmodmap -e "clear lock"
-xmodmap -e "keysym Caps_Lock = F13"
-numlockx on
 
 # Start a D-Bus session
 source /etc/X11/xinit/xinitrc.d/30-dbus
