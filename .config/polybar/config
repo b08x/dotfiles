@@ -156,7 +156,7 @@ modules-left = i3 xwindow
 ;modules-center =
 modules-right = alsa date
 
-tray-position = center
+tray-position = right
 tray-padding = 1
 tray-background = #141414
 
