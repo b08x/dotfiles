@@ -2,9 +2,9 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=start_pulse
-Comment=start pulseaudio
-Exec=pulseaudio --start
+Name=capstof13
+Comment=set capslock key to F13
+Exec=sh -c "xmodmap -e 'clear lock' && xmodmap -e 'keysym Caps_Lock = F13'"
 OnlyShowIn=XFCE;
 RunHook=0
 StartupNotify=false

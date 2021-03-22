@@ -2,9 +2,9 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=start_a2j
-Comment=start a2j_control
-Exec=a2j_control start
+Name=numlock
+Comment=numlock on
+Exec=numlockx on
 OnlyShowIn=XFCE;
 RunHook=0
 StartupNotify=false

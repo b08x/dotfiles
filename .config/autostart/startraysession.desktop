@@ -2,9 +2,9 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=start_jack
-Comment=start jackdbus
-Exec=jack_control start
+Name=startraysession
+Comment=startup session for sound
+Exec=ray_control open_session start
 OnlyShowIn=XFCE;
 RunHook=0
 StartupNotify=false

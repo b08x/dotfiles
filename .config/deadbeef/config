@@ -91,7 +91,7 @@ mp3.write_id3v2 1
 network.proxy.port 8080
 output_plugin pulseaudio
 playback.loop 1
-playback.order 0
+playback.order 2
 playback.volume -6.006493
 playlist.current 3
 playlist.cursor.0 0
@@ -118,7 +118,7 @@ prefwin.geometry.x 361
 prefwin.geometry.y 113
 resume.paused 0
 resume.playlist 3
-resume.position 98.871002
+resume.position 0.0000000
 resume.track 10299
 spectrogram.color.gradient_00 65535 0 0
 spectrogram.color.gradient_01 65535 32896 0
