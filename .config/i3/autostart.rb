@@ -30,7 +30,7 @@ when "soundbotMX"
   system('nitrogen --restore')
   sleep 2
   system("#{swallow} -d polybar -r laptop")
-when "soundbot"
+when "ninjabot"
   system(output)
   system('nitrogen --restore')
   sleep 2
@@ -42,6 +42,8 @@ end
 system("#{swallow} -d python3 $HOME/.config/i3/autotiling.py")
 
 system("ray_control open_session start")
+sleep 1
+system("a2j_control start")
 system("pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1")
 
 system("guake")
