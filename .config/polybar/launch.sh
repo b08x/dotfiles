@@ -17,7 +17,8 @@ launch_bar() {
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
 	else
-		polybar -q main -c "$dir/$style/config.ini" &	
+		polybar -q main -c "$dir/$style/config.ini" &
+		polybar -q portrait -c "$dir/$style/config.ini" &	
 	fi
 }
 
@@ -72,7 +73,7 @@ elif [[ "$1" == "--panels" ]]; then
 else
 	cat <<- EOF
 	Usage : launch.sh --theme
-		
+
 	Available Themes :
 	--blocks    --colorblocks    --cuts      --docky
 	--forest    --grayblocks     --hack      --material

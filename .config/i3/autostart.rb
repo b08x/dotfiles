@@ -27,6 +27,8 @@ host = host.strip
 swallow = "/usr/local/bin/swallow"
 output = File.join(ENV["HOME"], '.screenlayout', host)
 
+polybar = File.join(ENV["HOME"], '.config', 'polybar', 'launch.sh')
+
 case host
 when "soundbotMX"
   system("touchpad-indicator")
@@ -37,7 +39,7 @@ when "soundbotMX"
       exec("#{swallow} -d polybar -r laptop")
   end
 when "ninjabot"
-  polybars = ["#{swallow} -d polybar -r landscape", "#{swallow} -d polybar -r portait"]
+  # polybars = ["#{swallow} -d polybar -r landscape", "#{swallow} -d polybar -r portait"]
 
   system(output)
 
@@ -45,9 +47,11 @@ when "ninjabot"
 
   sleep 1
 
-  polybars.each do |x|
-    forkoff(x)
-  end
+  forkoff("#{polybar} --blocks")
+
+  # polybars.each do |x|
+  #   forkoff(x)
+  # end
 
   forkoff("tilda")
 end
