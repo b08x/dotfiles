@@ -31,35 +31,20 @@ polybar = File.join(ENV["HOME"], '.config', 'polybar', 'launch.sh')
 
 case host
 when "soundbotMX"
-  system("touchpad-indicator")
-  system(output)
-  system('nitrogen --restore')
+  forkoff("touchpad-indicator")
+  forkoff(output)
+  forkoff('nitrogen --restore')
   sleep 1
-  fork do
-      exec("#{swallow} -d polybar -r laptop")
-  end
+  forkoff("#{polybar} --colorblocks")
 when "ninjabot"
-  # polybars = ["#{swallow} -d polybar -r landscape", "#{swallow} -d polybar -r portait"]
-
-  system(output)
-
-  system('nitrogen --restore')
-
+  forkoff(output)
+  forkoff('nitrogen --restore')
   sleep 1
-
   forkoff("#{polybar} --blocks")
-
-  # polybars.each do |x|
-  #   forkoff(x)
-  # end
-
   forkoff("tilda")
 end
 
-
-
 forkoff("#{swallow} -d python3 $HOME/.config/i3/autotiling.py")
-
 system("notify-send 'starting sound services'")
 forkoff("jack_control start")
 sleep 0.5
@@ -67,5 +52,4 @@ forkoff("a2j_control start")
 forkoff("ray_control open_session start")
 sleep 1
 forkoff("pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1")
-
 forkoff("guake")
