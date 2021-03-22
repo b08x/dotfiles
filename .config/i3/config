@@ -164,27 +164,10 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 ######################################
-# ---{ global autostart }---
+# ---{ autostart }---
 ######################################
 
-$autostart compton &
-$autostart xmodmap -e "clear lock"
-$autostart xmodmap -e "keysym Caps_Lock = F13"
-$autostart numlockx on
-
-$autostart ray_control open_session start
-$autostart pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1
-
-$autostart guake
-
-# use -w to configure which workspaces would autotile
-$execute 'exec $swallow -d python3 $HOME/.config/i3/autotiling.py'
-
-######################################
-# ---{ host specific autostart }---
-######################################
-
-$execute 'exec $hosthelper'
+$execute 'exec $autostart'
 
 ######################################
 # ---{ application key bindings }---
