@@ -167,9 +167,9 @@ client.background       #FFFFFF
 exec compton
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = F13"
-exec_always --no-startup-id xmodmap -e "remove Mod1 = Alt_R" 
+exec_always --no-startup-id xmodmap -e "remove Mod1 = Alt_R"
 exec_always --no-startup-id xmodmap -e "add Mod3 = Alt_R"
-exec_always --no-startup-id xmodmap -e "remove Mod1 = Alt_L" 
+exec_always --no-startup-id xmodmap -e "remove Mod1 = Alt_L"
 exec_always --no-startup-id xmodmap -e "add Mod3 = Alt_L"
 exec_always --no-startup-id numlockx on
 
@@ -180,6 +180,8 @@ exec --no-startup-id ruby $HOME/.config/i3/autostart.rb
 bindsym $mod+Return exec terminator -b
 
 bindsym $mod+F13 exec --no-startup-id "~/.config/rofi/bin/launcher_text"
+bindsym $mod+d exec --no-startup-id "~/.config/rofi/bin/launcher_text"
+
 bindsym $alt+Tab exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show window"
 
 bindsym $mod+Home $execute 'exec google-chrome-stable --proxy-server="127.0.0.1:8118"'
