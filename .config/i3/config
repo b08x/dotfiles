@@ -126,6 +126,10 @@ bindcode $mod+Shift+Mod2+$KP_8 move container to workspace $ws8
 bindcode $mod+Shift+Mod2+$KP_9 move container to workspace $ws9
 bindcode $mod+Shift+Mod2+$KP_0 move container to workspace $ws10
 
+bindsym $alt+Shift+Left move workspace to output left
+bindsym $alt+Shift+Right move workspace to output right
+
+
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
 
@@ -164,15 +168,6 @@ client.background       #FFFFFF
 ######################################
 # ---{ autostart }---
 ######################################
-exec compton
-exec_always --no-startup-id xmodmap -e "clear lock"
-exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = F13"
-exec_always --no-startup-id xmodmap -e "remove Mod1 = Alt_R"
-exec_always --no-startup-id xmodmap -e "add Mod3 = Alt_R"
-exec_always --no-startup-id xmodmap -e "remove Mod1 = Alt_L"
-exec_always --no-startup-id xmodmap -e "add Mod3 = Alt_L"
-exec_always --no-startup-id numlockx on
-
 exec --no-startup-id ruby $HOME/.config/i3/autostart.rb
 ######################################
 # ---{ application key bindings }---
