@@ -45,8 +45,8 @@ when "ninjabot"
 
   sleep 1
 
-  polybars.each do
-    forkoff(polybar)
+  polybars.each do |x|
+    forkoff(x)
   end
 
   forkoff("tilda")
@@ -57,9 +57,11 @@ end
 forkoff("#{swallow} -d python3 $HOME/.config/i3/autotiling.py")
 
 system("notify-send 'starting sound services'")
+forkoff("jack_control start")
+sleep 0.5
+forkoff("a2j_control start")
 forkoff("ray_control open_session start")
 sleep 1
-forkoff("a2j_control start")
 forkoff("pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1")
 
 forkoff("guake")
