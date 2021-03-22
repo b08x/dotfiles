@@ -8,9 +8,9 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 10";
+	font:							"3270Medium Nerd Font 14";
     show-icons:                     true;
-	icon-theme: 					"Papirus";
+	icon-theme: 					"Infinity-Dark-Icons";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -95,7 +95,7 @@ element {
 }
 
 element-icon {
-    size:                           24px;
+    size:                           64px;
     border:                         0px;
 }
 

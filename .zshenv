@@ -35,3 +35,5 @@ export PAGER=less
 export NO_AT_BRIDGE=1 
 
 export VAMP_PATH="$HOME/.vamp"
+
+export HOSTNAME=`hostname`

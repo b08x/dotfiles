@@ -160,14 +160,17 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
 
+
 ######################################
 # ---{ autostart }---
 ######################################
 exec compton
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = F13"
-exec_always --no-startup-id 'xmodmap -e "remove Mod1 = Alt_R" -e "add Mod3 = Alt_R"'
-exec_always --no-startup-id 'xmodmap -e "remove Mod1 = Alt_L" -e "add Mod3 = Alt_L"'
+exec_always --no-startup-id xmodmap -e "remove Mod1 = Alt_R" 
+exec_always --no-startup-id xmodmap -e "add Mod3 = Alt_R"
+exec_always --no-startup-id xmodmap -e "remove Mod1 = Alt_L" 
+exec_always --no-startup-id xmodmap -e "add Mod3 = Alt_L"
 exec_always --no-startup-id numlockx on
 
 exec --no-startup-id ruby $HOME/.config/i3/autostart.rb

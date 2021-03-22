@@ -16,7 +16,7 @@ Plug 'https://github.com/chrisbra/unicode.vim.git'
 call plug#end()
 
 let mapleader = ","
-let localleader = "\"
+let localleader = "\\"
 
 command! FR set filetype=ruby
 
