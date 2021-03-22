@@ -8,6 +8,9 @@
   "autocomplete-plus":
     confirmCompletion: "tab"
   core:
+    disabledPackages: [
+      "ruby-solargraph"
+    ]
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"

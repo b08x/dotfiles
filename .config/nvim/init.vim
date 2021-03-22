@@ -15,7 +15,8 @@ Plug 'https://github.com/chrisbra/unicode.vim.git'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-let mapleader = "\<space>"
+let mapleader = ","
+let localleader = "\"
 
 command! FR set filetype=ruby
 
@@ -52,8 +53,6 @@ set clipboard+=unnamedplus
 let g:sonicpi_command = 'sonic-pi-tool'
 let g:sonicpi_send = 'eval-stdin'
 let g:sonicpi_stop = 'stop'
-let g:vim_redraw = 1
-
 " Window navigation
 nnoremap <A-Right> <C-w>l
 nnoremap <A-Left> <C-w>h
@@ -110,6 +109,15 @@ let cmdline_app['ruby']   = 'pry'
 let cmdline_app['sh']     = 'bash'
 let cmdline_in_buffer = 0
 let cmdline_external_term_cmd = "terminator -e '%s' &"
+" vimcmdline mappings
+let cmdline_map_start          = '<LocalLeader>s'
+let cmdline_map_send           = '<Space>'
+let cmdline_map_send_and_stay  = '<LocalLeader><Space>'
+let cmdline_map_source_fun     = '<LocalLeader>f'
+let cmdline_map_send_paragraph = '<LocalLeader>p'
+let cmdline_map_send_block     = '<LocalLeader>b'
+let cmdline_map_send_motion    = '<LocalLeader>m'
+let cmdline_map_quit           = '<LocalLeader>q'
 
 nnoremap <silent> <leader>e :call Fzf_dev()<CR>
 

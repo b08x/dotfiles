@@ -9,6 +9,5 @@ Type=Application
 Icon=raysession
 StartupNotify=false
 NoDisplay=true
-Hidden=false
+Hidden=true
 Categories=System;
-
