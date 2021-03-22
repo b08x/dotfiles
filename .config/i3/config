@@ -12,10 +12,7 @@ set $i3home = "$HOME/.config/i3"
 
 set $swallow "/usr/local/bin/swallow"
 
-set $autostart "$HOME/.config/i3/autostart.rb"
-
-font pango:BlexMono Nerd Font 11
-
+font pango:FiraCode Nerd Font 11
 default_border pixel 1
 default_floating_border normal
 
@@ -171,8 +168,7 @@ exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = F13"
 exec_always --no-startup-id numlockx on
 
-$execute 'exec $autostart'
-
+exec --no-startup-id ruby $HOME/.config/i3/autostart.rb
 ######################################
 # ---{ application key bindings }---
 ######################################

@@ -35,7 +35,7 @@ when "soundbotMX"
   forkoff(output)
   forkoff('nitrogen --restore')
   sleep 1
-  forkoff("#{polybar} --colorblocks")
+  forkoff("#{polybar} --hack")
 when "ninjabot"
   forkoff(output)
   forkoff('nitrogen --restore')
