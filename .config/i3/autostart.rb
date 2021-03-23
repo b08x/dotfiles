@@ -33,15 +33,15 @@ case host
 when "soundbotMX"
   forkoff("touchpad-indicator")
   forkoff(output)
-  forkoff('nitrogen --restore')
+  # forkoff('nitrogen --restore')
   sleep 1
   forkoff("#{polybar} --hack")
 when "ninjabot"
   forkoff(output)
-  forkoff('nitrogen --restore')
+  # forkoff('nitrogen --restore')
   sleep 1
   forkoff("#{polybar} --blocks")
-  forkoff("tilda")
+  # forkoff("tilda")
 end
 
 forkoff("#{swallow} -d python3 $HOME/.config/i3/autotiling.py")
