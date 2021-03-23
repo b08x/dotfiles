@@ -31,7 +31,7 @@ polybar = File.join(ENV["HOME"], '.config', 'polybar', 'launch.sh')
 
 case host
 when "soundbotMX"
-  forkoff("touchpad-indicator")
+  forkoff("touchpad-indicator &")
   forkoff(output)
   # forkoff('nitrogen --restore')
   sleep 1
@@ -42,6 +42,7 @@ when "ninjabot"
   sleep 1
   forkoff("#{polybar} --blocks")
   # forkoff("tilda")
+  forkoff("redshift -c '~/.config/redshift/redshift.conf' &")
 end
 
 forkoff("#{swallow} -d python3 $HOME/.config/i3/autotiling.py")

@@ -19,6 +19,8 @@ default_floating_border normal
 hide_edge_borders none
 floating_modifier $mod
 
+focus_on_window_activation smart
+
 set $KP_1 87
 set $KP_2 88
 set $KP_3 89
@@ -129,6 +131,8 @@ bindcode $mod+Shift+Mod2+$KP_0 move container to workspace $ws10
 bindsym $alt+Shift+Left move workspace to output left
 bindsym $alt+Shift+Right move workspace to output right
 
+bindsym $mod+grave scratchpad show
+
 
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
@@ -169,6 +173,7 @@ client.background       #FFFFFF
 # ---{ autostart }---
 ######################################
 exec --no-startup-id ruby $HOME/.config/i3/autostart.rb
+exec --no-startup-id nitrogen --restore
 ######################################
 # ---{ application key bindings }---
 ######################################
@@ -196,3 +201,5 @@ for_window [window_role="task_dialog"] floating enable
 assign [class="^Deadbeef"] $ws10
 for_window [class="(?i)raysession"] floating enable
 for_window [class="(?i)sonic-pi"] border none
+
+for_window [class="(?i)vmpk"] floating enable, move to scratchpad, scratchpad show

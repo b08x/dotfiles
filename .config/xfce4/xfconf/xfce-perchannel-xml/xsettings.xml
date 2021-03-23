@@ -27,7 +27,7 @@
     <property name="MonospaceFontName" type="string" value="BlexMono Nerd Font 10"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
-    <property name="ToolbarStyle" type="empty"/>
+    <property name="ToolbarStyle" type="string" value="both"/>
     <property name="ToolbarIconSize" type="empty"/>
     <property name="MenuImages" type="empty"/>
     <property name="ButtonImages" type="empty"/>
