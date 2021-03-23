@@ -139,7 +139,7 @@ _load_settings "$HOME/.zsh/configs"
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-(cat ~/.cache/wal/sequences &)
+#(cat ~/.cache/wal/sequences &)
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
