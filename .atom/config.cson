@@ -18,7 +18,6 @@
     ]
   editor:
     fontFamily: "BlexMono Nerd Font"
-    fontSize: 17
     preferredLineLength: 70
     showIndentGuide: true
     softWrap: true
