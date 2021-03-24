@@ -1,0 +1,212 @@
+######################################
+# ---{ global variables }---
+######################################
+
+set $mod Mod4
+set $alt Mod3
+
+set $exec exec --no-startup-id
+
+set $i3home "$HOME/.config/i3"
+
+set $swallow "/usr/local/bin/swallow"
+
+font pango:FiraCode Nerd Font 11
+
+default_border pixel 0
+default_floating_border normal
+
+hide_edge_borders none
+floating_modifier $mod
+
+focus_on_window_activation smart
+
+set $KP_1 87
+set $KP_2 88
+set $KP_3 89
+set $KP_4 83
+set $KP_5 84
+set $KP_6 85
+set $KP_7 79
+set $KP_8 80
+set $KP_9 81
+set $KP_0 90
+set $KP_Enter 104
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+######################################
+# ---{ window navigation }---
+######################################
+bindsym $mod+q kill
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split v
+bindsym $mod+v split h
+
+bindsym $mod+t split toggle
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+a focus parent
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindcode $mod+Mod2+$KP_1 workspace $ws1
+bindcode $mod+Mod2+$KP_2 workspace $ws2
+bindcode $mod+Mod2+$KP_3 workspace $ws3
+bindcode $mod+Mod2+$KP_4 workspace $ws4
+bindcode $mod+Mod2+$KP_5 workspace $ws5
+bindcode $mod+Mod2+$KP_6 workspace $ws6
+bindcode $mod+Mod2+$KP_7 workspace $ws7
+bindcode $mod+Mod2+$KP_8 workspace $ws8
+bindcode $mod+Mod2+$KP_9 workspace $ws9
+bindcode $mod+Mod2+$KP_0 workspace $ws10
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindcode $mod+Shift+Mod2+$KP_1 move container to workspace $ws1
+bindcode $mod+Shift+Mod2+$KP_2 move container to workspace $ws2
+bindcode $mod+Shift+Mod2+$KP_3 move container to workspace $ws3
+bindcode $mod+Shift+Mod2+$KP_4 move container to workspace $ws4
+bindcode $mod+Shift+Mod2+$KP_5 move container to workspace $ws5
+bindcode $mod+Shift+Mod2+$KP_6 move container to workspace $ws6
+bindcode $mod+Shift+Mod2+$KP_7 move container to workspace $ws7
+bindcode $mod+Shift+Mod2+$KP_8 move container to workspace $ws8
+bindcode $mod+Shift+Mod2+$KP_9 move container to workspace $ws9
+bindcode $mod+Shift+Mod2+$KP_0 move container to workspace $ws10
+
+bindsym $alt+Shift+Left move workspace to output left
+bindsym $alt+Shift+Right move workspace to output right
+
+bindsym $mod+grave scratchpad show
+
+workspace_auto_back_and_forth yes
+workspace_layout tabbed
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# class                 border  bground text    indicator child_border
+client.focused          #000000 #2F4F4F #cbb907 #56F480   #010102
+client.focused_inactive #333333 #5F676A #a85858 #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #092890 #e23860 #d27979   #8c2f2f
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
+
+
+######################################
+# ---{ autostart }---
+######################################
+exec --no-startup-id "~/.screenlayout/$HOSTNAME"
+$exec ruby $HOME/.config/i3/autostart.rb
+$exec nitrogen --restore
+######################################
+# ---{ application key bindings }---
+######################################
+bindsym $mod+Return $exec terminator -b
+
+#bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
+bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
+
+bindsym $mod+F13 $exec xfce4-appfinder
+
+bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window"
+
+bindsym $mod+Home $exec firefox
+
+bindcode $mod+Mod2+$KP_Enter $exec "guake --show -n 'ranger' -e ranger"
+bindcode $mod+Shift+Mod2+$KP_Enter $exec Thunar
+
+bindsym $mod+g $exec "guake --show -n 'goog' -e googler"
+bindsym $mod+Insert $exec zim --plugin quicknote
+
+bindsym XF86AudioPlay deadbeef --play
+bindsym XF86AudioPause deadbeef --toggle-pause
+bindsym XF86AudioNext deadbeef --next
+bindsym XF86AudioPrev deadbeef --previous
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+for_window [class="(?i)raysession"] floating enable
+for_window [class="(?i)sonic-pi"] border none
+
+for_window [class="(?i)vmpk"] floating enable, move to scratchpad, scratchpad show
+
+#Assign Workspaces:
+assign [class="^Deadbeef"] $ws10
