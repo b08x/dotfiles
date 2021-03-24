@@ -27,22 +27,26 @@ host = host.strip
 swallow = "/usr/local/bin/swallow"
 output = File.join(ENV["HOME"], '.screenlayout', host)
 
-polybar = File.join(ENV["HOME"], '.config', 'polybar', 'launch.sh')
+blocks = File.join(ENV["HOME"], '.config', 'polybar', 'blocks', 'launch.sh')
+grayblocks = File.join(ENV["HOME"], '.config', 'polybar', 'blocks', 'launch.sh')
 
-case host
-when "soundbotMX"
+
+if host == "soundbotMX"
   forkoff("touchpad-indicator &")
   forkoff(output)
   # forkoff('nitrogen --restore')
   sleep 1
-  forkoff("#{polybar} --hack")
-when "ninjabot"
+  forkoff("#{grayblocks}")
+end
+
+
+if "ninjabot"
   forkoff(output)
   # forkoff('nitrogen --restore')
   sleep 1
-  forkoff("#{polybar} --blocks")
+  #forkoff("#{polybar} --blocks")
   # forkoff("tilda")
-  forkoff("redshift -c '~/.config/redshift/redshift.conf' &")
+  #forkoff("redshift -c '~/.config/redshift/redshift.conf' &")
 end
 
 forkoff("#{swallow} -d python3 $HOME/.config/i3/autotiling.py")
@@ -58,4 +62,9 @@ sleep 1
 system("notify-send 'starting pulse'")
 forkoff("pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1")
 
+forkoff("#{blocks}")
+forkoff("nitrogen --restore")
+
 forkoff("guake")
+
+

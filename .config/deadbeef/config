@@ -1,6 +1,14 @@
 ape.write_apev2 1
 artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*folder*.png
 cli_add_playlist_name Default
+converter.bypass_same_format 0
+converter.dsp_preset -1
+converter.encoder_preset 4
+converter.output_folder /home/b08x
+converter.output_format 0
+converter.overwrite_action 0
+converter.retag_after_copy 0
+converter.write_to_source_folder 1
 deadbeef_version 1.8.4
 filebrowser.autofilter 1
 filebrowser.bgcolor 
@@ -75,10 +83,10 @@ hotkey.key30 b 0 0 next
 hotkey.key31 n 0 0 playback_random
 hotkey.key32 "Ctrl k" 0 0 toggle_stop_after_album
 hotkeys_created 1
-logwindow.geometry.h 200
-logwindow.geometry.w 400
-logwindow.geometry.x 38
-logwindow.geometry.y 40
+logwindow.geometry.h 720
+logwindow.geometry.w 621
+logwindow.geometry.x -769
+logwindow.geometry.y 342
 mainwin.geometry.h 712
 mainwin.geometry.maximized 1
 mainwin.geometry.w 1366
@@ -93,18 +101,18 @@ output_plugin pulseaudio
 playback.loop 1
 playback.order 2
 playback.volume -6.006493
-playlist.current 3
+playlist.current 4
 playlist.cursor.0 0
 playlist.cursor.1 -1
 playlist.cursor.2 0
-playlist.cursor.3 2999
+playlist.cursor.3 7067
 playlist.cursor.4 0
 playlist.cursor.5 0
 playlist.pin.groups 1
 playlist.scroll.0 0
 playlist.scroll.1 0
 playlist.scroll.2 0
-playlist.scroll.3 77320
+playlist.scroll.3 -7067
 playlist.scroll.4 0
 playlist.scroll.5 0
 playlist.scroll.cursorfollowplayback 1
@@ -112,14 +120,16 @@ playlist.tab.00000 Default
 playlist.tab.00001 Singles
 playlist.tab.00002 trip01
 playlist.tab.00003 New Playlist
+playlist.tab.00004 New Playlist
 prefwin.geometry.h 551
 prefwin.geometry.w 859
 prefwin.geometry.x 361
 prefwin.geometry.y 113
 resume.paused 0
-resume.playlist 3
-resume.position 222.24693
-resume.track 2999
+resume.playlist -1
+resume.position -1.000000
+resume.track -1
+shellexec_config_wip [{"command": "flac -o", "title": "Edit/convert_to_flac", "name": "new_cmd", "flags": ["local", "single", "multiple"]}]
 spectrogram.color.gradient_00 65535 0 0
 spectrogram.color.gradient_01 65535 32896 0
 spectrogram.color.gradient_02 65535 65535 0
@@ -134,10 +144,10 @@ spectrogram.refresh_interval 25
 streamer.samplerate 44100
 streamer.samplerate_mult_44 44100
 streamer.samplerate_mult_48 48000
-trkproperties.geometry.h 400
-trkproperties.geometry.w 400
+trkproperties.geometry.h 418
+trkproperties.geometry.w 1029
 trkproperties.geometry.x 573
-trkproperties.geometry.y 517
+trkproperties.geometry.y 499
 waveform.bg_alpha 65535
 waveform.bg_color_b 13878
 waveform.bg_color_g 13364

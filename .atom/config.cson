@@ -7,9 +7,14 @@
       _analyticsUserId: "af1865d2-6aca-46f7-a3de-6aaef529e4e5"
   "autocomplete-plus":
     confirmCompletion: "tab"
+    enableBuiltinProvider: false
+    strictMatching: true
   core:
     disabledPackages: [
       "ruby-solargraph"
+      "autocomplete-snippets"
+      "autocomplete-html"
+      "autocomplete-css"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -42,6 +47,10 @@
     command: "terminator -T \"atom\""
   "ruby-solargraph":
     commandPath: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/solargraph"
+  "sb-atom-sonic-pi":
+    sendOSCMessagesToGUI: true
+    sonicPiGUIPort: 51235
+    sonicPiServerPort: 4557
   "seti-ui":
     compactView: true
     hideProjectTab: true
