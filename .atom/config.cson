@@ -10,6 +10,7 @@
     enableBuiltinProvider: false
     strictMatching: true
   core:
+    autoHideMenuBar: true
     disabledPackages: [
       "ruby-solargraph"
       "autocomplete-snippets"

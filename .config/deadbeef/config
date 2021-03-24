@@ -42,7 +42,7 @@ filebrowser.sort_treeview 1
 filebrowser.treelines 0
 filechooser.lastdir file:///home/b08x/bender/share/media/music/Singles
 gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"514","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"274","align":"1","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"}]
-gtkui.layout.0.6.2 hsplitter locked=0 ratio=0.230448 pos=0 size2=0 {vsplitter locked=0 ratio=0.558263 pos=0 size2=0 {pltbrowser {} filebrowser {} } vsplitter locked=0 ratio=0.553571 pos=0 size2=0 {vsplitter locked=0 ratio=0.393130 pos=0 size2=0 {musical_spectrum {} waveform_seekbar {} } hsplitter locked=0 ratio=0.745455 pos=0 size2=0 {playlist hideheaders=0 width=1097 {} placeholder {} } } } 
+gtkui.layout.0.6.2 hsplitter locked=0 ratio=0.230448 pos=0 size2=0 {vsplitter locked=0 ratio=0.558263 pos=0 size2=0 {pltbrowser {} filebrowser {} } vsplitter locked=0 ratio=0.553571 pos=0 size2=0 {vsplitter locked=0 ratio=0.393130 pos=0 size2=0 {musical_spectrum {} waveform_seekbar {} } hsplitter locked=0 ratio=0.745455 pos=0 size2=0 {playlist hideheaders=0 width=780 {} placeholder {} } } } 
 gtkui.playlist.group_by_tf "$directory(%path%)"
 gtkui.sortby_fmt_v2 $directory(%path%)
 gtkui.sortby_order 0
