@@ -11,7 +11,7 @@ set $i3home "$HOME/.config/i3"
 
 set $swallow "/usr/local/bin/swallow"
 
-font pango:FiraCode Nerd Font 11
+font pango:Hack Nerd Font 11
 
 default_border pixel 0
 default_floating_border normal
@@ -175,6 +175,8 @@ client.background       #FFFFFF
 exec --no-startup-id "~/.screenlayout/$HOSTNAME"
 $exec ruby $HOME/.config/i3/autostart.rb
 $exec nitrogen --restore
+exec_always --no-startup-id i3-msg 'exec redshift -x; exec redshift -b 0.8 -O 5700K'
+
 ######################################
 # ---{ application key bindings }---
 ######################################

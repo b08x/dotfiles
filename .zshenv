@@ -40,4 +40,7 @@ export NO_AT_BRIDGE=1
 
 export VAMP_PATH="$HOME/.vamp"
 
+export ANSIBLE_HOME="$HOME/Workspace/ansible"
+export ANSIBLE_CONFIG="$HOME/Workspace/ansible/ansible.cfg"
+
 export HOSTNAME=`hostname`
