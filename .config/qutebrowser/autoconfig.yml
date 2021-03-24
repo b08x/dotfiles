@@ -3,5 +3,5 @@
 
 config_version: 2
 settings:
-  url.start_pages:
-    global: file:///home/b08x/Notebooks/Current
+  content.proxy:
+    global: http://localhost:8118
