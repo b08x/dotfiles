@@ -172,6 +172,7 @@ client.background       #FFFFFF
 ######################################
 # ---{ autostart }---
 ######################################
+exec --no-startup-id "~/.screenlayout/$HOSTNAME"
 $exec ruby $HOME/.config/i3/autostart.rb
 $exec nitrogen --restore
 ######################################
@@ -189,7 +190,7 @@ bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window
 bindsym $mod+Home $exec firefox
 
 bindcode $mod+Mod2+$KP_Enter $exec "guake --show -n 'ranger' -e ranger"
-bindcode $mod+Shift+Mod2+$KP_Enter $exec 'exec Thunar'
+bindcode $mod+Shift+Mod2+$KP_Enter $exec Thunar
 
 bindsym $mod+g $exec "guake --show -n 'goog' -e googler"
 bindsym $mod+Insert $exec zim --plugin quicknote
