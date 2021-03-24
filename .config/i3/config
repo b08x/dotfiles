@@ -5,15 +5,15 @@
 set $mod Mod4
 set $alt Mod3
 
-set $autostart exec --no-startup-id
-set $execute exec i3-msg
+set $exec exec --no-startup-id
 
-set $i3home = "$HOME/.config/i3"
+set $i3home "$HOME/.config/i3"
 
 set $swallow "/usr/local/bin/swallow"
 
 font pango:FiraCode Nerd Font 11
-default_border pixel 1
+
+default_border pixel 0
 default_floating_border normal
 
 hide_edge_borders none
@@ -43,6 +43,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
 ######################################
 # ---{ window navigation }---
 ######################################
@@ -133,7 +134,6 @@ bindsym $alt+Shift+Right move workspace to output right
 
 bindsym $mod+grave scratchpad show
 
-
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
 
@@ -172,24 +172,27 @@ client.background       #FFFFFF
 ######################################
 # ---{ autostart }---
 ######################################
-exec --no-startup-id ruby $HOME/.config/i3/autostart.rb
-exec --no-startup-id nitrogen --restore
+$exec ruby $HOME/.config/i3/autostart.rb
+$exec nitrogen --restore
 ######################################
 # ---{ application key bindings }---
 ######################################
-bindsym $mod+Return exec terminator -b
+bindsym $mod+Return $exec terminator -b
 
-bindsym $mod+F13 exec --no-startup-id "~/.config/rofi/bin/launcher_text"
-bindsym $mod+d exec --no-startup-id "~/.config/rofi/bin/launcher_text"
+#bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
+bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
 
-bindsym $alt+Tab exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show window"
+bindsym $mod+F13 $exec xfce4-appfinder
 
-bindsym $mod+Home $execute 'exec google-chrome-stable --proxy-server="127.0.0.1:8118"'
-bindcode $mod+Mod2+$KP_Enter $execute 'exec guake --show -n 'ranger' -e ranger'
-bindcode $mod+Shift+Mod2+$KP_Enter $execute 'exec Thunar'
+bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window"
 
-bindsym $mod+g $execute 'exec guake --show -n 'goog' -e googler'
-bindsym $mod+Insert $execute 'exec zim --plugin quicknote'
+bindsym $mod+Home $exec firefox
+
+bindcode $mod+Mod2+$KP_Enter $exec "guake --show -n 'ranger' -e ranger"
+bindcode $mod+Shift+Mod2+$KP_Enter $exec 'exec Thunar'
+
+bindsym $mod+g $exec "guake --show -n 'goog' -e googler"
+bindsym $mod+Insert $exec zim --plugin quicknote
 
 bindsym XF86AudioPlay deadbeef --play
 bindsym XF86AudioPause deadbeef --toggle-pause
@@ -198,9 +201,11 @@ bindsym XF86AudioPrev deadbeef --previous
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-#Assign Workspaces:
-assign [class="^Deadbeef"] $ws10
+
 for_window [class="(?i)raysession"] floating enable
 for_window [class="(?i)sonic-pi"] border none
 
 for_window [class="(?i)vmpk"] floating enable, move to scratchpad, scratchpad show
+
+#Assign Workspaces:
+assign [class="^Deadbeef"] $ws10
