@@ -175,7 +175,7 @@ client.background       #FFFFFF
 exec --no-startup-id "~/.screenlayout/$HOSTNAME"
 $exec ruby $HOME/.config/i3/autostart.rb
 $exec nitrogen --restore
-exec_always --no-startup-id i3-msg 'exec redshift -x; exec redshift -b 0.8 -O 5700K'
+exec_always --no-startup-id i3-msg 'exec redshift -x; exec redshift -b 0.9 -O 6000K'
 
 ######################################
 # ---{ application key bindings }---
