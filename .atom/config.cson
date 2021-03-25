@@ -13,7 +13,6 @@
     allowPendingPaneItems: false
     autoHideMenuBar: true
     disabledPackages: [
-      "ruby-solargraph"
       "autocomplete-snippets"
       "autocomplete-html"
       "autocomplete-css"
