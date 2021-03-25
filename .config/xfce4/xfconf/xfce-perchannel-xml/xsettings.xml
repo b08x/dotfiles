@@ -3,7 +3,7 @@
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
     <property name="ThemeName" type="string" value="oomox-eboda"/>
-    <property name="IconThemeName" type="string" value="Infinity-Dark-Icons"/>
+    <property name="IconThemeName" type="string" value="Obsidian-Sand"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>

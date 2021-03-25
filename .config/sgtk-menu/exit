@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Lock",
+    "exec": "notify-send todo",
+    "icon": "lock"
+  },
+  {
+    "name": "Logout",
+    "exec": "i3-msg exit",
+    "icon": "exit"
+  },
+  {
+    "name": "Reboot",
+    "exec": "sudo reboot",
+    "icon": "reload"
+  },
+  {
+    "name": "Shutdown",
+    "exec": "sudo shutdown -h now",
+    "icon": "window-close"
+  }
+]
