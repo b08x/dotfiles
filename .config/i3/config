@@ -184,13 +184,13 @@ bindsym $mod+Return $exec terminator -b
 
 #bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
 bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
-
 bindsym $mod+F13 $exec xfce4-appfinder
+bindsym Menu $exec "~/.config/rofi/bin/launcher_text"
 
 bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window"
 
 bindsym $mod+Home $exec firefox
-
+bindsym $mod+End $exec atom
 bindcode $mod+Mod2+$KP_Enter $exec "guake --show -n 'ranger' -e ranger"
 bindcode $mod+Shift+Mod2+$KP_Enter $exec Thunar
 

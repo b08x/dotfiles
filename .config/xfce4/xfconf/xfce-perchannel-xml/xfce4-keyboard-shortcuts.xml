@@ -28,8 +28,8 @@
       <property name="&lt;Super&gt;KP_Enter" type="string" value="terminator -b -e ranger"/>
       <property name="Super_R" type="string" value="exo-open --launch FileManager"/>
       <property name="Search" type="string" value="terminator -b -e &quot;googler&quot;"/>
-      <property name="&lt;Super&gt;F13" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="&lt;Super&gt;Home" type="string" value="firefox"/>
+      <property name="Menu" type="string" value="xfce4-popup-whiskermenu"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

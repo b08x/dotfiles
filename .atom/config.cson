@@ -7,8 +7,8 @@
       _analyticsUserId: "af1865d2-6aca-46f7-a3de-6aaef529e4e5"
   "autocomplete-plus":
     confirmCompletion: "tab"
-    enableBuiltinProvider: false
-    strictMatching: true
+    minimumWordLength: 2
+    strictMatching: false
   core:
     allowPendingPaneItems: false
     autoHideMenuBar: true
@@ -19,14 +19,14 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "one-dark-ui"
-      "vibrant-ink-ruby"
+      "atom-dark-ui"
+      "robot-ruby-syntax"
     ]
   editor:
     fontFamily: "BlexMono Nerd Font"
-    fontSize: 19
-    preferredLineLength: 70
-    showIndentGuide: true
+    fontSize: 18
+    preferredLineLength: 60
+    showLineNumbers: false
     softWrap: true
     softWrapAtPreferredLineLength: true
   "exception-reporting":
