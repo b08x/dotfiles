@@ -101,7 +101,7 @@ output_plugin pulseaudio
 playback.loop 1
 playback.order 2
 playback.volume -6.006493
-playlist.current 4
+playlist.current 2
 playlist.cursor.0 0
 playlist.cursor.1 -1
 playlist.cursor.2 0

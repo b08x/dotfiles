@@ -5,6 +5,8 @@
         path: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/rubocop"
     general:
       _analyticsUserId: "af1865d2-6aca-46f7-a3de-6aaef529e4e5"
+      loggerLevel: "info"
+    ruby: {}
   "autocomplete-plus":
     confirmCompletion: "tab"
     minimumWordLength: 2
@@ -20,12 +22,11 @@
     telemetryConsent: "limited"
     themes: [
       "atom-dark-ui"
-      "robot-ruby-syntax"
+      "atom-material-syntax"
     ]
   editor:
     fontFamily: "BlexMono Nerd Font"
-    fontSize: 18
-    preferredLineLength: 60
+    fontSize: 20
     showLineNumbers: false
     softWrap: true
     softWrapAtPreferredLineLength: true
@@ -42,10 +43,13 @@
     "*config": "source.shell"
     ".zsh*": "source.shell"
   "git-tools": {}
+  minimap: {}
   "one-dark-ui":
     stickyHeaders: true
   "open-terminal-here":
     command: "terminator -T \"atom\""
+  "ruby-block":
+    highlightLineNumber: true
   "ruby-solargraph":
     commandPath: "/home/b08x/.rvm/rubies/ruby-3.0.0/bin/solargraph"
   "sb-atom-sonic-pi":
