@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-30T23:10:44-05:00
+
+====== docker plex ======
+//Monday 30 November 2020//
+@docker @bender
+https://forums.plex.tv/t/official-plex-media-server-docker-images-getting-started/172291

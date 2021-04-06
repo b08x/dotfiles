@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-30T14:41:23-05:00
+
+====== plex docker no worky ======
+//Monday 30 November 2020//
+@helpdesk @docker
+
+```
+plex    | Error in command line:the argument for option '--serverUuid' should follow immediately after the equal sign
+```
+
+I think in order for this to be effective, an ssd should be utilized for the temp transcoding. So, perhaps at some point...

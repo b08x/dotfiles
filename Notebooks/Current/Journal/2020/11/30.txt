@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-30T15:12:10-05:00
+
+====== Monday 30 Nov 2020 ======
+
+It's snowing. 
+
+Trying to decide what to work on next. I keep running into this blocker, that

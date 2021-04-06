@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-28T07:25:14-04:00
+
+====== file management with ranger, yadm and atom ======
+//^{Wednesday 28 October 2020}//
+@ranger @dotfiles @atom
+
+[>] config ranger to open folders as project folders in atom, and individual files in mousepad
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-18T14:20:55-04:00
+
+====== Sparta ======
+Created Thursday 18 March 2021
+
+@ambisonics
+
+# install the mkl library from an apt source. the current version availble in the debian repos scatters the files
+# all over the system. So either try this or find the source files to install in /opt
+https://software.intel.com/content/www/us/en/develop/articles/installing-intel-free-libs-and-python-apt-repo.html

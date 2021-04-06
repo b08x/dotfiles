@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-12-30T05:34:13-05:00
+
+====== window manager ======
+Created Wednesday 30 December 2020
+
+[[Home:notes:managing sway windows|assign apps to workspaces]]
+
+https://github.com/pierrechevalier83/workstyle

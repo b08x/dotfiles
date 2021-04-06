@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-03T05:23:21-05:00
+
+====== 05231203 | git cli ======
+@git
+
+https://cli.github.com/
+
+{{{code: lang="sh" linenumbers="False"
+
+}}}

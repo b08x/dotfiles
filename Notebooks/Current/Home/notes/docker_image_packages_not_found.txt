@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T11:36:12-04:00
+
+====== docker image packages not found ======
+//^{Tuesday 27 October 2020}//
+@docker @helpdesk
+
+
+
+{{{code: lang="sh" linenumbers="False"
+ERROR: unsatisfiable constraints:
+  man (missing):
+	required by: world[man]
+ERROR: Service 'nzedb' failed to build : The command '/bin/sh -c apk add curl git man unzip vim wget tmux chrony build-base' returned a non-zero code: 1
+}}}
+
+
+updated the dockerfile install "man-pages" as opposed to just "man"
+
+
+

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T20:52:40-04:00
+
+====== remove a file from git tracking ======
+//^{Tuesday 27 October 2020}//
+@git @tips
+
+{{{code: lang="sh" linenumbers="False"
+yadm rm -r --cached ranger/__pycache__
+}}}
+
+this will remove the folder from git tracking but not remove the folder itself
+
+

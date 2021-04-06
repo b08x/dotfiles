@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:02:39-04:00
+
+====== backups ======
+Created Tuesday 27 October 2020
+
+https://gist.github.com/508f854ef570168ce0d4a3ca47275233
+
+
+
+# from lapbot/ninjabot;
+
+```bash
+ansible-pull --purge -U https://github.com/b08x/ansible -d /home/b08x/Workspace/ansible --tags dotfiles,backup
+```
+
+
+# rsync icons
+
+rsync -avP .icons/oomox-equilibrium-gray-dark ninjabot:~/.icons/
+
+# downgrades
+to downgrade all packages;
+
+pacman -Suu 
+
+or just a package
+
+pacman -Suu terminator

@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T05:27:42-04:00
+
+====== hardware ======
+Created Tuesday 27 October 2020
+
+https://www.seeedstudio.com/fusion.html
+
+
+00:1A:8C:94:60:35 - sophos vpn mac

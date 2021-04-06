@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-24T03:33:45-04:00
+
+====== plugins ======
+Created Wednesday 24 March 2021
+
+--------------------
+https://github.com/pierreguillot/Camomile/wiki/How-to-create-new-plugins
+
+@puredata @camomile
+
+--------------------
+https://ineardisplay.com/plugins/
+@vst 
+
+

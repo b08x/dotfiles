@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-09T06:09:04-04:00
+
+====== deadsampler ======
+Created Friday 09 October 2020
+
+
+https://acousticbrainz.org/data
+
+https://hub.docker.com/r/mtgupf/essentia/
+
+http://antiboredom.github.io/audiogrep/

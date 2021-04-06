@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-28T07:41:39-04:00
+
+====== window manager stuff ======
+Created Wednesday 28 October 2020
+
+{{./screenshot_2020-10-28-074147.png}}
+
+~~This is why when moving the mouse and another application is brought to focus I won't say "I forgot how I set that".~~ 
+
+This should help highlight windows behind other windows so placement can be programmed. 
+
+I have no idea what I'm typing about, I thought a moment ago. And a moment ago, that was true. 

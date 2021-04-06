@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T06:45:01-04:00
+
+====== xfce4 laptop lid ======
+//^{Tuesday 27 October 2020}//
+@xfce @sysconfig
+
+when closing the laptop lid, all displays are be disabled. this is undesirable when using the laptop with a monitor connected and lid closed
+
+https://bbs.archlinux.org/viewtopic.php?id=195300
+
+
+
+

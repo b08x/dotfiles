@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-20T04:40:58-04:00
+
+====== Saturday 20 Mar 2021 ======
+
+to revert previosus video card driver;
+
+{{{code: lang="sh" linenumbers="False"
+sudo ddm-mx -p nvidia
+}}}
+
+
+
+[ ] consider ansible for things like /etc/modprobe.d/alsa-base.conf

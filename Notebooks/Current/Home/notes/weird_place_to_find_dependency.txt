@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:51:36-04:00
+
+====== weird place to find dependency ======
+//^{Tuesday 27 October 2020}//
+@libxtract @vamp @sonicannotator @compiling
+
+compiled libxtract via SAFE plugin source
+
+
+
+

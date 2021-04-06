@@ -1,0 +1,86 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T04:53:34-04:00
+
+====== notes ======
+
+
+Where notes from the quicknote plugin are stored. 
+
+random notes and tasks can go here
+
+== Using Tags: ==
+
+helpdesk - something to fix
+tips - a note on how something was done or how to do something
+idea - something to try or at least consider
+intranet - home networking, service related
+
+sysconfig - anything to do with configuring the operating system
+
+
+soundbot - specific to audio related things within the linux realm
+
+
+* it seems that tags will include pages below. for example, if you click "idea" in the tag cloud it will bring up all the pages under Home:notes
+
+--------------------
+
+====== 30122143 fixing the terminator ======
+@terminator @helpdesk
+
+
+{{{code: lang="sh" linenumbers="False"
+Traceback (most recent call last):
+  File "/usr/bin/terminator", line 48, in <module>
+    import terminatorlib.optionparse
+  File "/usr/lib/python3.9/site-packages/terminatorlib/optionparse.py", line 24, in <module>
+    from . import config
+  File "/usr/lib/python3.9/site-packages/terminatorlib/config.py", line 78, in <module>
+    from validate import Validator
+ModuleNotFoundError: No module named 'validate'
+}}}
+
+this actually works; 
+
+https://bugs.archlinux.org/task/69090
+
+`sudo nvim /usr/lib/python3.9/site-packages/terminatorlib/config.py`
+
+however still;
+
+Unable to load configuration: name 'Validator' is not defined
+Unable to load configuration: name 'Validator' is not defined
+Unable to load configuration: name 'Validator' is not defined
+Unable to load configuration: name 'Validator' is not defined
+Unable to load configuration: name 'Validator' is not defined
+Unable to load configuration: name 'Validator' is not defined
+Unable to load configuration: name 'Validator' is not defined
+Unable to load configuration: name 'Validator' is not defined
+Unable to load configuration: name 'Validator' is not defined
+
+
+--------------------
+
+====== 31120146 flatpak ======
+@flatpak
+
+
+{{{code: lang="sh" linenumbers="False"
+flatpak install flathub org.gimp.GIMP
+
+Note that the directories 
+
+'/var/lib/flatpak/exports/share'
+'/home/b08x/.local/share/flatpak/exports/share'
+
+are not in the search path set by the XDG_DATA_DIRS environment variable, so
+applications installed by Flatpak may not appear on your desktop until the
+session is restarted.
+}}}
+
+--------------------
+
+====== 01010516 ======
+@sway @ui @helpdesk
+

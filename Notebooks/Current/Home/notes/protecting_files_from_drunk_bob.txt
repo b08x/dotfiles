@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-01T12:48:22-05:00
+
+====== protecting files from drunk bob ======
+//Tuesday 01 December 2020//
+@systems
+
+set -o noclobber
+
+lsattr | chattr

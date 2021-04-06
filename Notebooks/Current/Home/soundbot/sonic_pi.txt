@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T03:07:39-04:00
+
+====== sonic pi ======
+Created Tuesday 27 October 2020
+
+atom sonic-pi auto-complete:
+add options to sample/fx/synth auto completes
+add samples

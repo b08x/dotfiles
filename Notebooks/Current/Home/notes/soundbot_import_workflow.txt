@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:45:56-04:00
+
+====== soundbot import workflow ======
+//^{Tuesday 27 October 2020}//
+@soundbot
+* after exported to sfz, the sample file names need to be cleaned up as well as some parameters(opcodes)need to be adjusted
+
+* ensure that "file location" is not hard-coded anywhere

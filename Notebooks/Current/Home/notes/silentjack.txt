@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-01T03:06:10-05:00
+
+====== silentjack ======
+//Tuesday 01 December 2020//
+@voice @audio
+
+detects deadair; runs a command; waits for the command to finish; then waits a bit before detecting deadair again
+https://www.aelius.com/njh/silentjack/

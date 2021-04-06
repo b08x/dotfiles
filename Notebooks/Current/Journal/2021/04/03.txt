@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-04-03T18:00:24-04:00
+
+====== Saturday 03 Apr 2021 ======
+
+The following packages were automatically installed and are no longer required:
+  gtk2-engines libjs-modernizr lsp-plugins-data optipng parallel python3-pyqt5.qtmultimedia python3-pyqt5.qtwebkit python3-pystache python3-qtpy python3-xdg ruby-did-you-mean ruby-minitest
+  ruby-net-telnet ruby-power-assert ruby-test-unit ruby-xmlrpc sysstat
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  libruby2.5* oomox* rake* ruby* ruby-sass* ruby2.5* rubygems-integration*
+
+
+auto apt autoremove;
+The following packages will be REMOVED:
+  gtk2-engines libjs-modernizr lsp-plugins-data optipng parallel python3-pyqt5.qtmultimedia python3-pyqt5.qtwebkit python3-pystache python3-qtpy python3-xdg
+  ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert ruby-test-unit ruby-xmlrpc sysstat
+
+
+Recommended packages:
+  fonts-lato
+The following NEW packages will be installed:
+  gtk2-engines parallel python3-pystache sysstat fonts-lato
+
+
+The following NEW packages will be installed:
+  gtk2-engines libruby2.5 oomox parallel python3-pystache rake ruby ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert ruby-sass ruby-test-unit ruby-xmlrpc ruby2.5

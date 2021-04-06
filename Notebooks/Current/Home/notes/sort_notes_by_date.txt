@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-10-29T10:02:13-04:00
+
+====== sort notes by date ======
+//^{Thursday 29 October 2020}//
+@zim
+
+[x] if there's time. try to make the notes slightly easier to search through. its a long list to look at. 
+
+
+
+

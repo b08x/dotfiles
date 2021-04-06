@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-14T19:12:33-05:00
+
+====== 19121214 btrfs management ======
+@btrfs @systems
+
+
+{{{code: lang="sh" linenumbers="False"
+> It is also recommended that you start the snapper cleanup service sudo systemctl start snapper-cleanup.timer && sudo systemctl enable snapper-cleanup.timer
+-> More information can be found on the Arch Wiki page for snapper: https://wiki.archlinux.org/index.php/Snapper
+
+
+-> Additionally, if you plan on using this script with grub-btrfs, you should make your grub directory a subvolume so it isn't reverted when you undo snapshots
+
+}}}
+
+
+
+https://gist.github.com/broedli/4f401e0097f185ba34eb
+
+https://wiki.archlinux.org/index.php/snapper#Incremental_backup_to_external_drive
+
+[[git@github.com:doudou/snapsync.git]]
+
+
+The snapshot you are trying to boot into is probably set as read-only.
+
+You can check it with:
+
+$ sudo btrfs property get -ts /path/to/snapshot/
+If it returns ro=true, you have to make it writable with:
+
+$ sudo btrfs property set -ts /path/to/snapshot/ ro false

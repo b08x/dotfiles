@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-18T06:39:57-04:00
+
+====== speechbot ======
+Created Sunday 18 October 2020
+@speech_recognition
+
+
+
+https://wolfpaulus.com/raspberrypi2-sr/
+
+

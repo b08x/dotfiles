@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T06:13:01-04:00
+
+====== git stash ======
+//^{Tuesday 27 October 2020}//
+@git @tips
+
+good article explaining git stash
+
+https://www.freecodecamp.org/news/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a/
+
+
+
+

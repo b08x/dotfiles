@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-28T07:23:20-04:00
+
+====== ranger bookmarks and dotfiles ======
+//^{Wednesday 28 October 2020}//
+@ranger @dotfiles
+
+to create a bookmark in ranger
+
+navigate to the folder;
+
+then type "m" then pick the next number in the sequence. 
+to access that bookmark later, press ~ then choose the number corresponding to the folder you wish to navigate to. 
+
+
+
+
+

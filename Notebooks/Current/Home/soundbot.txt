@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-09T06:08:59-04:00
+
+====== soundbot ======
+
+[stuff with the tag soundbot]
+
+===== [[+deadsampler|deadsampler]] =====
+a sample library organize/categorize/analysis thingy
+
+	* extraction with essentia/gaia
+	* audio fingerprint fpcalc
+
+bpm/timbre/length/
+beats/frequencies/
+
+that stuff gets analysed and saved to a file. that somehow gets attached to deadbeef
+
+
+===== [[+speechbot|speechbot (isabella)]] =====
+https://github.com/syncopatedstudios/isabella
+
+speech to text
+
+some voice commands
+
+
+
+===== [[+sonic pi|sonic-pi]] =====
+
+I'd like to tie in deadsampler with this at some point...
+
+
+
+===== [[+sysconfig|sysconfig]] =====
+
+some basic system setup using ansible
+
+ideally as distro-agnostic as possible
+
+====== ui ======
+
+

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:53:24-04:00
+
+====== copy files that are symlinked ======
+//^{Tuesday 27 October 2020}//
+@rsync @tips
+
+e.g.
+
+rsync --copy-links -rvP xfce4 /home/b08x/tmp
+
+

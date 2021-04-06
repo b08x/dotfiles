@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-01T17:10:24-05:00
+
+====== reaper parameter linking broken ======
+//Tuesday 01 December 2020//
+@reaper @helpdesk
+
+unable to link one track parameter to another track parameter
+only able to link track parameters to other track parameters within itself

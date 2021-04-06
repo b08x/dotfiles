@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-24T03:34:41-04:00
+
+====== sound layers ======
+Created Wednesday 24 March 2021
+
+jack alsa pulse
+
+
+-s, --softmode
+			  Ignore xruns reported by the ALSA driver. This makes JACK less likely to disconnect unresponsive ports when running without --realtime.
+
+
+@jack

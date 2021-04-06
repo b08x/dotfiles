@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-13T17:46:28-05:00
+
+====== 17451213 hide nav bar in firefox ======
+@ui
+
+mkcd /home/b08x/.mozilla/firefox/kldvzv9n.default-release/chrome
+touch userChrome.css
+
+{{{code: lang="sh" linenumbers="False"
+   1   │ @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+   2   │ 
+   3   │ #navigator-toolbox {
+   4   │     height: 0px !important;
+   5   │     min-height: 0px !important;
+   6   │     overflow: hidden !important;
+   7   │ }
+   8   │ 
+   9   │ #navigator-toolbox:focus,
+  10   │ #navigator-toolbox:focus-within,
+  11   │ #navigator-toolbox:active {
+  12   │     height: auto !important;
+  13   │ }
+
+}}}
+
+
+* it works. ☺ There is a part where something has to be enabled in about:config
+
+{{{code: lang="cpp" linenumbers="False"
+about:config
+
+then set:
+
+toolkit.legacyUserProfileCustomizations.stylesheets
+
+to be true.
+}}}

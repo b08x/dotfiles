@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-23T13:09:11-04:00
+
+====== 0323:1307 sonic pi pry ======
+@sonicpi @pry @ruby
+
+{{{code: lang="ruby" linenumbers="False"
+[3] pry(main)> require '/home/b08x/Source/sonic-pi/app/server/ruby/lib/sonicpi/synths/synthinfo.rb'
+
+require '/home/b08x/Source/sonic-pi/app/server/ruby/core.rb'
+
+}}}

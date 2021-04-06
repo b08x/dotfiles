@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-04-03T21:25:31-04:00
+
+====== 0403:2104 ruby midi stuff ======
+@ruby @midi @soundfont
+
+
+https://github.com/gilesbowkett/archaeopteryx
+https://github.com/eagsalazar/sf2_to_js
+
+https://github.com/rjungemann/midian
+
+http://disorder.sk/stuff:tonegrid

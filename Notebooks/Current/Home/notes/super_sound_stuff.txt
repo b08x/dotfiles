@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-28T04:12:05-04:00
+
+====== super sound stuff ======
+//^{Wednesday 28 October 2020}//
+@ambisonics @acoustics
+
+https://community.sw.siemens.com/s/article/sound-fields-free-versus-diffuse-field-near-versus-far-field
+
+https://community.sw.siemens.com/s/article/masking
+
+
+
+
+

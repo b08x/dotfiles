@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-03T03:57:50-05:00
+
+====== 03571203  greetd and useful sway things ======
+@sway @ui
+
+
+#!/bin/sh
+export MOZ_ENABLE_WAYLAND=1
+export CLUTTER_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland-egl
+export ECORE_EVAS_ENGINE=wayland-egl
+export ELM_ENGINE=wayland_egl
+export SDL_VIDEODRIVER=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+export NO_AT_BRIDGE=1
+
+
+https://github.com/apognu/tuigreet
+
+--------------------
+@systemd @logging 
+
+
+
+systemd-cat [OPTIONS...] COMMAND ...
+
+Execute process with stdout/stderr connected to the journal.
+
+@ui
+
+https://www.deviantart.com/rvc-2011/art/SwayWM-on-Manjaro-714547700?comment=1%3A714547700%3A4502771199

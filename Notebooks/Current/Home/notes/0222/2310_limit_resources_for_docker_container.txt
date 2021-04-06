@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-02-22T23:11:13-05:00
+
+====== 2202:2310 limit resources for docker container ======
+@docker
+
+
+{{{code: lang="sh" linenumbers="False"
+sudo docker create --name=gitlab \
+--hostname bender.qbase.org \
+-e TZ=America/New_York \
+-p 8443:443 -p 8080:80 -p 2222:22 \
+--memory="4g" --memory-swap="4g" \
+-v /storage/gitlab/config:/etc/gitlab \
+-v /storage/gitlab/logs:/var/log/gitlab \
+-v /storage/gitlab/data:/var/opt/gitlab \
+--restart always \
+gitlab/gitlab-ce:latest
+
+}}}

@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-22T11:08:08-05:00
+
+====== 22121107 create wifi hotspot ======
+@systems
+
+https://github.com/lakinduakash/linux-wifi-hotspot
+

@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-01T13:44:03-05:00
+
+====== 0101:1342 ======
+@systems @helpdesk
+
+Jan 01 13:39:39 ninjabot xdg-user-dirs-update[2248]: Can't create dir //Desktop
+Jan 01 13:39:39 ninjabot xdg-user-dirs-update[2248]: Can't create dir //Downloads
+Jan 01 13:39:39 ninjabot xdg-user-dirs-update[2248]: Can't create dir //Templates
+Jan 01 13:39:39 ninjabot xdg-user-dirs-update[2248]: Can't create dir //Public
+Jan 01 13:39:39 ninjabot xdg-user-dirs-update[2248]: Can't create dir //Documents
+Jan 01 13:39:39 ninjabot xdg-user-dirs-update[2248]: Can't create dir //Music
+Jan 01 13:39:39 ninjabot xdg-user-dirs-update[2248]: Can't create dir //Pictures
+Jan 01 13:39:39 ninjabot xdg-user-dirs-update[2248]: Can't create dir //Videos
+
+
+{{{code: lang="sh" linenumbers="False"
+│Jan 01 13:40:20 ninjabot systemd[3648]: /usr/lib/systemd/user-generators/systemd-xdg-autostart-generator succeeded.                                                                         │
+
+Looking for unit files in (higher priority first):                                                                                                  │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /home/b08x/.config/systemd/user.control                                                                                                     │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /run/user/1000/systemd/user.control                                                                                                         │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /run/user/1000/systemd/transient                                                                                                            │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /run/user/1000/systemd/generator.early                                                                                                      │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /home/b08x/.config/systemd/user                                                                                                             │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /etc/xdg/systemd/user                                                                                                                       │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /etc/systemd/user                                                                                                                           │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /run/user/1000/systemd/user                                                                                                                 │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /run/systemd/user                                                                                                                           │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /run/user/1000/systemd/generator                                                                                                            │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /home/b08x/.local/share/systemd/user                                                                                                        │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /usr/local/share/systemd/user                                                                                                               │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /usr/share/systemd/user                                                                                                                     │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /usr/local/lib/systemd/user                                                                                                                 │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /usr/lib/systemd/user                                                                                                                       │
+│Jan 01 13:40:20 ninjabot systemd[3637]:         /run/user/1000/systemd/generator.late                                
+}}}

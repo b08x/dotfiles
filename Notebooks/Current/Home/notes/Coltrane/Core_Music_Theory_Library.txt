@@ -1,0 +1,712 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Core-music-theory-library ======
+
+This document won't cover all methods, classes and details. This is more like a tour to give you an idea of what the library is capable of. To have a deeper view, I invite you to read the specs in the `/specs` folder of the library and to play with the lib yourself via `bin/console`.
+
+## Table of Contents
+* [Setup](#setup)
+* [Tuning](#tuning)
+* [Frequencies](#frequencies)
+* [Pitches](#pitches)
+* [Voicings](#voicings)
+* [Pitch-Classes](#pitch-classes)
+* [Notes](#notes)
+* [NoteSets](#notesets)
+* [Frequency Intervals](#frequency-intervals)
+* [Intervals-Classes](#intervals-classes)
+* [Intervals](#Intervals)
+* [Chord Qualities](#chord-qualities)
+* [Chords](#chords)
+* [Scales](#scales)
+* [Roman Chords](#roman-chords)
+* [Progressions](#progressions)
+
+===== ## Setup =====
+
+Add `gem 'coltrane'` to your `Gemfile` or do your thing to have this gem available. I'm sure you will know how to do it. Then you'll be able to:
+
+```ruby
+require 'coltrane'
+```
+
+Now you have the core music theory available (`Coltrane::Theory`). The Command Line Interface, Synth, Instruments (representation), Commands, anything else, won't be imported by default. This is by choice, to keep your application light.
+
+To make it more accessible on your class you do a `include Coltrane::Theory`. That will allow you to access `Scale.major('C')` instead of `Coltrane::Theory::Scale.major('C')`.
+
+===== ## Tuning =====
+
+The default tuning of the whole system is 440hz for A4. If you need to change, just do `Coltrane.tuning = 430`, for example.
+
+## Main classes and some example code
+
+===== ## Frequencies =====
+
+The whole system is organized around frequencies. They can be both created by `[]` or `.new()` methods. Frequency operations involve some logarithmic calculation so this class provides you handy methods:
+
+==== ### Octaves ====
+
+```ruby
+Frequency[440].octave(1)
+#=> 880hz
+```
+
+```ruby
+Frequency[440].octave_up
+#=> 880hz
+```
+
+```ruby
+Frequency[880].octave_down
+#=> 440hz
+```
+
+==== ### Math operations ====
+
+You can sum, subtract and compare frequencies:
+
+```ruby
+Frequency.new(200) + Frequency.new(120.3333)
+#=> #<Coltrane::Frequency:0x00007fb3d42c0878 @frequency=320.3333>
+```
+
+```ruby
+Frequency.new(200) - Frequency.new(120.3333)
+#=> #<Coltrane::Frequency:0x00007fb3d5962fb8 @frequency=79.6667>
+```
+
+```ruby
+Frequency[300] == Frequency[300]
+#=> true
+```
+
+```ruby
+Frequency[400] > Frequency[300]
+#=> true
+```
+
+Divisions between frequencies return the interval between both in `cents`. 100 cents are equivalent to 1 semitone and 2 to one tone:
+
+```ruby
+Frequency[880] / Frequency[440]
+#=> #<Coltrane::Interval:0x00007fb3d4291b90 @cents=1200>
+```
+
+===== ## Pitches =====
+
+While Frequency is a random frequency that may have any kind of sound, pitches are sounds that are "in tune". They have frequency information that will always represent a note and an octave, such as `E4` or `A7`.
+
+==== ### Building pitches ====
+
+Via `#new`:
+```ruby
+  Pitch.new('C3')
+  Pitch.new(note: 'C',  octave: 3)
+  Pitch.new(frequency: 15.434)
+
+  # Via MIDI number
+  Pitch.new(12).name
+```
+
+Or via `[]`:
+```ruby
+  Pitch['C3']
+
+  # Via MIDI number
+  Pitch[39]
+```
+
+==== ### Methods and operations ====
+
+Obtaining Scientific Pitch Notation from MIDI number:
+```ruby
+Pitch[12].name
+#=> "C0"
+```
+
+Frequency information:
+```ruby
+Pitch['A4'].frequency
+#=> #<Coltrane::Frequency:0x00007fb3d3975548 @frequency=440.0>
+```
+
+Math operations:
+```ruby
+(Pitch['C3'] + 12).name
+#=> 'C4'
+```
+
+```ruby
+(Pitch['C3'] - 12).name
+#=> 'C2'
+```
+
+===== ## Voicings =====
+
+Voicings are groups of pitches. Don't confuse with Chords. They are more like an actual concrete implementation of music, since pitches have octave information while Note or PitchClasses don't. They were built mainly to aid synthesizer libraries. 
+
+In the future, this class will actually be able to aid on creating pleasant chord voicings, by understanding the minimum distance frequencies should be apart, taking into account the generally known thumb rule that lower pitches need more space to sound good than higher ones. 
+
+==== ### Building ====
+
+```ruby
+Voicing['C3', 'A8', 'G4']
+```
+
+### Methods and operations
+
+The only really useful method for now is `#frequencies`
+
+```ruby
+Voicing['C3', 'A8', 'G4'].frequencies
+=> [
+ #<Coltrane::Frequency:0x00007fcf2c8f5478 @frequency=130.8127826502993>,
+ #<Coltrane::Frequency:0x00007fcf2c8f5338 @frequency=7040.0>,
+ #<Coltrane::Frequency:0x00007fcf2c8f51f8 @frequency=391.99543598174927>
+]
+```
+
+===== ## Pitch-Classes =====
+
+Pitch-classes are all the classes of pitches that are in a whole number of
+octaves apart.
+
+**BEWARE** `class` part of the word here is not in the sense of Ruby or computer science at all. This is a technical name created by the music experts, totally outside of the software development world.
+    
+For example, C1, C2, C3, C4 are pitches from the C pitch class.
+
+Why to not just call it Note instead? Because notes are technically something really different from most people think. You learn why on the next topic.
+
+==== ### Building PitchClasses ====
+
+You can get one by frequency:
+```ruby
+PitchClass.new(frequency: 261.63).notation
+#=> "C"
+```
+
+Or by the note name:
+```ruby
+PitchClass.new('A')
+PitchClass['A']
+```
+
+=== ### Methods and operations ===
+
+You can obtain the interval by subtraction:
+
+```ruby
+(PitchClass['G'] - PitchClass['A']).full_names
+#=> ["Minor Seventh", "Augmented Sixth", "Minor Fourteenth", "Augmented Thirteenth"]
+```
+
+Sum
+```ruby
+(PitchClass['C'] + 2).name
+=> "D"
+```
+
+```ruby
+# Against frequencies, the result will round up to closest PitchClass
+(PitchClass['C'] + Frequency[220]).name
+=> "A#"
+```
+
+==== ### Fundamental Frequencies ====
+
+As PitchClasses will comprise a whole array of frequencies, they have what we call a `fundamental frequency`, which is the Frequency at 0 octave:
+
+```ruby
+PitchClass['A'].fundamental_frequency.octave_up(4)
+#=> #<Coltrane::Frequency:0x00007ff57ca6c768 @frequency=440.0>
+```
+
+===== ## Notes =====
+
+A Note is a very abstract concept. You can think Notes as being the different ways of representing PitchClasses. Take `D#` and `Eb` for example, they're different Notes with the same PitchClass (D#), in a equal-tempered scale (if you don't know what that means, don't worry. If you ever used something different than that in your life, you'd probably know).
+
+I.e, notes have sharps (#) and flats (b). In `Coltrane`, they can have as much as they want. Inside the system, because of lacking a better name, we call them alterations. So for example, `C#` has an alteration of +1. `Db` has an alteration of -1. The idea of alteration is altering its name but preserving the PitchClass (like `C#` vs `Db`)
+
+```ruby
+Note['C#'].alter(-1).name
+#=> "Db"
+```
+
+You can try to change the note's alteration, but that may not always succeed, because of the pure logic of it. For example: `C#` can never have its alteration to 0. That means you can never express it without using a sharp or a flat.
+
+```ruby
+# Following example is impossible
+
+Note['C#'].alter(0).name
+#=> "C#" 
+```
+
+```ruby
+# But this one is perfectly possible
+
+Note['B#'].alter(0).name
+#=> "C" 
+```
+
+Notes class inherit from PitchClass, so everything from PitchClass mostly applies to Notes.
+
+==== ### Building notes ====
+
+```ruby
+Note['C#']
+Note['C##']
+Note['Cbb']
+```
+
+==== ### Enharmony ====
+
+Because we most of the time want `C#` to be treated equally as `Db`, this is baked in the system:
+
+```ruby
+Note['B#'] == Note['C']
+#=> true
+```
+
+If for some reason you really want to stress the difference, compare them by name:
+
+```ruby
+Note['B#'].name == Note['C'].name
+#=> false
+```
+
+==== ### Altering notes to their enharmonic pairs ====
+
+`#alter`:
+```ruby
+Note['D#'].alter(-1).name
+#=> "Eb"
+```
+
+`#as`
+```ruby
+Note['B'].as('C').name
+#=> "Cb"
+```
+
+```ruby
+Note['A'].as('F').name
+#=> "F####"
+```
+
+==== ### Other methods and operations ====
+
+Note inherit from PitchClass, so you can expect that all methods from the last
+work just fine, such as: `:+`, `:-`, `#frequency`, etc.
+
+`#pretty_name`
+
+```ruby
+Note['C#'].pretty_name
+=> "C♯"
+```
+
+And a lot of accident asking methods, such as: `#accident?`, `#sharp?`, `#flat?`, `#double_sharp?`, `#double_flat?`
+
+===== ## NoteSets =====
+
+NoteSet is simply a group of notes. They provide a confortable way of working
+with these. Basically every method in `Coltrane` that outputs a set of notes
+should output a `NoteSet` (if you find something that doesn't, please open an
+issue).
+
+### Building NoteSets
+
+```ruby
+NoteSet[*%w[C# G# A B Bb]]
+```
+
+If you're not familiar with that syntax, this is essentially the same as:
+
+```ruby
+NoteSet['C#', 'G#', 'A', 'Bb']
+```
+
+A very important thing: `NoteSet` cannot contain more than 1 note for each 
+`PitchClass`. That means the following code:
+
+```ruby
+NoteSet['C#', 'Db']
+```
+
+Will actually return the same as:
+
+```ruby
+NoteSet['C#']
+```
+
+That way, we guarantee, on Chord Building for example, that things run smooth.
+Repeated pitch classes have no advantages for the library and just add complexity.
+
+==== ### Methods and Operations ====
+
+`#names` basically return an array of strings
+
+```ruby
+NoteSet['C#', 'G#', 'A', 'Bb'].names
+=> ["C#", "G#", "A", "Bb"]
+
+```
+
+`#pretty_names` 
+
+```ruby
+NoteSet['C#', 'G#', 'A', 'Bb'].names
+#=> ["C♯", "G♯", "A", "B♭"]
+
+```
+
+You can intersect NoteSets:
+
+```ruby
+intersection = NoteSet['C#', 'D', 'G', 'G#'] & NoteSet['Db', 'F', 'A', 'G#']
+intersection.names
+#=> ["C#", "G#"]
+```
+
+Notice it intersected 'C#' against 'Db', since both are enharmonic (same PitchClass).
+
+That feature allows you cross notes from chords or scales:
+
+```ruby
+common_notes = Scale.major('C').notes & Chord.new(name: 'C#6/9').notes
+common_notes.names
+#=> ["F"]
+```
+
+===== ## Frequency Intervals =====
+
+Frequency Intervals are basically the distance between 2 frequencies. They're measured in a logarithmic way (cents). They may be `#ascending?` or `#descending`.
+
+===== ## Interval-Classes =====
+
+A subclass of Frequency Intervals. In the same sense that Pitch Classes are a class(group, category, not Ruby Class) of all pitches across octaves, Interval-Classes are categories of intervals. In the system, they're pretty much what we'd call **Major Third**, **Perfect Fifth** and so on. They are pretty much what a Minor Third and Augmented Second have in common: both share the same logarithmic distance.
+
+===== ## Intervals =====
+
+Intervals are a subclass of Interval Classes. They carry more details and are more suitable for Music Theory use.
+
+===== ### Building =====
+
+Many many ways of retrieving them. Bear with me:
+
+```ruby
+interval = Note['D'] - Note['C']
+#=> #<Coltrane::IntervalClass:0x00007ff57a373d28 @cents=200>
+
+interval.name
+#=> "M2"
+```
+
+```ruby
+Interval.major_second
+#=> #<Coltrane::IntervalClass:0x00007ff57a9c59b0 @cents=200>
+```
+
+They may be compound and altered (a name I made up for aug/dim intervals):
+
+```ruby
+Interval.augmented_thirteenth
+Coltrane::Interval.augmented_thirteenth
+=> #<Coltrane::Interval:0x00007f958e3f79d0 @cents=1000, @compound=true, @letter_distance=6>
+```
+
+```
+Interval.major_second
+```
+
+==== ### Methods and operations ====
+
+You sum them against notes:
+
+```ruby
+(Note['C'] + Interval.major_second).name
+#=> "D"
+```
+
+You can invert them:
+```ruby
+(-Interval.minor_third).full_name
+#=> Major Sixth
+```
+
+===== ## Interval-Sequences =====
+
+Interval-Sequences are a way of expressing a sequence of intervals (duh). They're needed mostly for Chords and Scales.
+
+==== ### Building ====
+
+You can build using notes. Notice it will only retrieve the interval information from the notes and discard them completely after.
+
+```ruby
+IntervalSequence.new(notes: %w[D F C A])
+```
+```ruby
+IntervalSequence.new(intervals: [0, 3, 5, 7, 10])
+```
+
+### Methods and operations
+
+This is a very important class, since it is the core functionality of many important aspects of the library such as scale building/finding, chord building/finding. Thereby, it's packed with a lot of functionalities to aid on these tasks.
+
+`#distances`
+
+If you're familiar with the Major Scale, you know by heart the following sequence: `W W H W W W H`, W meaning Whole Tone and H meaning half tone. In `Coltrane`, we call these distances.
+
+That's how the above example works:
+
+```ruby
+IntervalSequence.new(intervals: [0, 2, 4, 5, 7, 9, 11]).distances
+[2, 2, 1, 2, 2, 2, 1]
+```
+
+And btw, you can also instantiate a interval sequence via distances:
+
+```ruby
+IntervalSequence.new(distances: [2, 2, 1, 2, 2, 2, 1]).distances
+```
+
+But in that case, you'd probably prefer to just use `Scale.major` 😘
+
+### Obtaining interval info
+Suppose you want to know what kind of third an interval sequence has:
+
+```ruby
+interval_sequence.third
+#=> "Major Third"
+```
+
+Let's say you wanna know the sixth:
+```ruby
+interval_sequence.sixth
+#=> "Augmented Sixth"
+```
+
+What if you only want it to return it if its major, minor or perfect, not considering augmented or diminished
+```ruby
+interval_sequence.sixth!
+#=> nil
+```
+
+You can also ask in a boolean way:
+```ruby
+interval_sequence.has_major_third?
+```
+
+```ruby
+interval_sequence.has('Perfect Fifth')
+```
+
+And several other methods that we will explore on its children: `ChordQuality` and `Scale`
+
+===== ## Chord-Qualities =====
+
+A ChordQuality is a special case of IntervalSequence because they have a special sequence of intervals, which makes possible to name it. The system has actually a tree of chords and uses that to define its name. ChordQualities are mostly used by the Chord class.
+
+===== ## Chords =====
+
+That's where things start to get interesting. So, Chord essentially has 2 attributes: a Note (root note) and a ChordQuality. 
+
+==== ### Building ====
+It can be built in many different ways:
+
+```ruby
+Chord.new(notes: %w[C E G]).name
+#=> CM
+```
+
+```ruby
+Chord.new(name: 'A7').notes.names
+#=> ["A", "C#", "E", "G"]
+```
+
+```ruby
+Chord.new(root_note: Note['C'],
+		  quality: ChordQuality.new(name: 'm7')).notes.names
+#=> ["C", "D#", "G", "A#"]
+```
+
+### Methods and operations
+
+Chords can return their notes (as NoteSet, always), as you saw below.
+
+Chords also can be transposed:
+
+```ruby
+(Chord.new(name: 'C6/9') + Interval.major_second).name
+#=> "D6/9"
+```
+
+You can add notes to it:
+```ruby
+(Chord.new(name: 'DM') + Note['B']).name
+#=> "DM6"
+```
+
+==== ### Chord substitutions ====
+
+This is like an experimental feature. Chord substitutions are a very common technique since Jazz Bebop area. For now, the only substitution available is `#tritone_substitution`
+
+```ruby
+Chord.new(name: 'Cm7').tritone_substitution.name
+#=> "F#m7"
+```
+
+## Scales
+
+Scales are a cyclic sequence of notes. They're actually composed by an IntervalSequence and a starting note (tone). They may also have a name.
+
+===== ### Building scales =====
+
+You may provide distances and a tone:
+```ruby
+Scale.new(2, 2, 1, 2, 2, 2, 1, tone: 'D')
+```
+
+You may simply provide notes:
+```ruby
+Scale.new(notes: %w[C D E F G A B])
+```
+
+=== #### Classic Scales extension ===
+
+Since there many known scales and modes, a module called Classic Scales extends Scale with some scale building and finding functionality. This module has some classic scales built-in:
+```ruby
+	SCALES = {
+	  'Pentatonic Major' => [2, 2, 3, 2, 3],
+	  'Blues Major'      => [2, 1, 1, 3, 2, 3],
+	  'Harmonic Minor'   => [2, 1, 2, 2, 1, 3, 1],
+	  'Hungarian Minor'  => [2, 1, 2, 1, 1, 3, 1],
+	  'Pentatonic Minor' => [3, 2, 2, 3, 2],
+	  'Blues Minor'      => [3, 2, 1, 1, 3, 2],
+	  'Whole Tone'       => [2, 2, 2, 2, 2, 2],
+	  'Flamenco'         => [1, 3, 1, 2, 1, 2, 2],
+	  'Chromatic'        => [1] * 12
+	}.freeze
+```
+
+Those basically the distances and they will allow you to build scales by doing:
+```ruby
+Scale.pentatonic_major('C')
+```
+
+```ruby
+Scale.blues_minor('D')
+```
+
+=== #### Diatonic Scale ===
+
+Since Diatonic Scale is a very special scale on the Western Music and that it needs notes to be outputted in a certain way (alteration), they are treated as a special case of `Scale`. To create it:
+
+```ruby
+Scale.major('C')
+```
+
+```ruby
+Scale.minor('F')
+```
+
+They have a special method such as `#relative` that will return the relative major/minor. 
+
+### Scale finding
+
+`#having_notes`
+
+```ruby
+Scale.having_notes NoteSet['C', 'E', 'G']
+#=> huge list of scales indexed by tone and scale name
+```
+
+```ruby
+Scale.having_chords('CM7', 'Dm7')
+#=> huge list of scales indexed by tone and scale name
+```
+
+==== ### Finally, scale methods! ====
+
+Since now you know all the ways you can get yourself a scale, here's what you can do with them:
+
+`#triads`, `#sevenths`, `tertians(size)`
+These will return the chords of the scale following the formula of choosing a degree and skipping the next.
+
+`#chords(size)`
+Return all known chords of that scale having the given size
+
+`#sharps`, `#flats`, `#accidentals`, you understand what they do.
+
+`#degree`, `#[]`, that will return you a note of a certain degree of the scale
+
+and of course, `#notes` will give you the notes.
+
+===== ## Roman Chords =====
+
+Roman Chords are basically a way of describing chords relative to their key using roman numeral notation. In the key of C, for example, C7 chord may be describe as I7, Dm as ii, G7 as V7, etc. The reason they were added to the library was to unleash the power of Progressions. Check more details on this [wikipedia article](http://www.wikiwand.com/en/Roman_numeral_analysis).
+
+==== ### Building Roman Chords ====
+```ruby
+RomanChord.new('I', key: 'C').chord.name
+#=> "CM"
+```
+
+```ruby
+RomanChord.new(chord: 'CM', key: 'C').notation
+#=> "I"
+```
+
+==== ### Methods ====
+
+As they are mostly used within Progressions, lets skip this section
+
+==== ## Progressions ====
+
+Progressions are way of visualizing harmony in music by using Roman Chords. That way, we can recognize the same patterns across many different songs, such as the most over-used progression in the world `I-V-vi-IV`, that can be found anywhere, from Lady Gaga's Pokerface to Red Hot Chilli Pepper's Otherside ([video explaining](https://www.youtube.com/watch?v=oOlDewpCfZQ)).
+
+==== ### Building Progressions ====
+
+The most straightforward way to create progressions is by using Progression Notation. Basically, Roman Chords
+
+```ruby
+progression = Progression.new('I-IV-vi-V', key: 'A')
+progression.chords.map(&:name)
+#=> ["AM", "DM", "F#m", "EM"]
+```
+
+```ruby
+Progression.new('IM7-IV7-vi-Vdim7', key: 'B').chords.map(&:name)
+#=> ["BM7", "E7", "G#m", "F#dim7"]
+```
+
+==== ### Methods ====
+
+You can find progressions by providing some chords. It will scan keys (scales) and return how that sequence of chords could be described on that scale, sorted by notes that are outside of the scale.
+
+```ruby
+Progression.find('AM', 'DM', 'F#m', 'EM)
+#=> big list of progressions sorted by notes out of key
+```
+
+Other methods are: `#notes`, `#chords`, `#notes_out`
+
+### Notable progressions
+
+This a module that extends Progression. It allows to create well known progressions very easily:
+
+```ruby
+Progression.jazz('D').chords.map(&:name)
+=> ["Em7", "A7", "D7"]
+```
+
+```ruby
+Progression.pop('F#').chords.map(&:name)
+=> ["F#M", "C#M", "D#m", "BM"]
+```
+
+```ruby
+Progression.blues('G#').chords.map(&:name)
+=> ["G#M7", "C#7", "G#7", "D#7", "C#7", "G#7"]
+```

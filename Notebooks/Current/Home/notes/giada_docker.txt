@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-15T05:50:12-05:00
+
+====== 05491215 giada docker ======
+@docker @sampler @giada
+
+https://github.com/monocasual/giada-docker
+
+{{{code: lang="sh" linenumbers="False"
+
+}}}

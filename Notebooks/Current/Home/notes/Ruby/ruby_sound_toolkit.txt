@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-25T00:49:48-05:00
+
+====== 25120048 ruby sound toolkit ======
+@ruby @soundbot
+
+http://www.speech.kth.se/snack/
+
+http://rbsnack.sourceforge.net/
+{{{code: lang="sh" linenumbers="False"
+
+}}}

@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:49:44-04:00
+
+====== docker volumes ======
+//^{Tuesday 27 October 2020}//
+@docker @bender @idea
+
+
+create a shared volume in docker
+
+docker volume create --name torrent-downloads
+
+
+
+

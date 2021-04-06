@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-23T08:41:12-05:00
+
+====== 2301:0840 ======
+@systemd
+
+https://github.com/jceb/dex#autostart-alternative

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:55:13-04:00
+
+====== zim segfaults ======
+//^{Tuesday 27 October 2020}//
+@zim @helpdesk
+
+[>] zim segfaults from time to time
+
+Noticed during multiple copy/insert of new quick notes
+
+
+--------------------
+
+	haven't noticed this since this was occuring. I would bet it would happend again if the same behavior was taking place. 
+

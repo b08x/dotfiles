@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:44:11-04:00
+
+====== autosync git repos ======
+//^{Tuesday 27 October 2020}//
+@git @sysconfig @automation
+
+https://github.com/fabiospampinato/autogit#readme
+
+[x] configure autogit
+
+

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T23:09:02-04:00
+
+====== up and atom ======
+//^{Tuesday 27 October 2020}//
+@atom @ui
+
+{{{code: lang="sh" linenumbers="False"
+atom --portable
+}}}
+
+fir backing up and/or/neither transferring atom configs 
+
+
+
+

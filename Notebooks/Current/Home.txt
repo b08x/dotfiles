@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-09-29T22:46:54-04:00
+
+====== Home ======
+
+creating a page with a ":" (colon) in the title, 
+will create subpages for everything after the colon (":")
+
+
+https://github.com/klaussinani/taskbook
+
+=== Using the Task List ===
+
+
+* give the list a tag
+	* then add items below
+
+{{{code: lang="markdown" linenumbers="False"
+TODO: @intranet
+[] do this
+[] do that
+
+}}}
+
+
+* use "!" to add priority. The more exclaimation marks, the higher the priority. In this case "another thing" would be listed at the top
+
+
+{{{code: lang="markdown" linenumbers="False"
+[ ] this !!
+[ ] that !!!!
+[ ] another thing !!!!!
+}}}
+
+
+* add a start date if you want. do so be prepending 'greater than' to a date in this format: >2020-11-30
+
+{{{code: lang="markdown" linenumbers="False"
+TODO: @projectname >2020-11-01
+[] do this first
+	[] this is a subtask
+[] or do this first and go back and use exclaimation points to order tasks
+[] yeah, this one should be a priority now that I think about it !
+
+}}}
+
+
+* when adding tasks, tag it with a relevant topic so info and tasks can be linked
+{{{code: lang="markdown" linenumbers="False"
+[] a task @relatedtopic
+[] configure a thing on the intranet @intranet
+
+}}}
+
+

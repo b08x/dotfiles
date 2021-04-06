@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-26T13:59:58-05:00
+
+====== 26121359 qutebrowser options ======
+@qutebrowser @ui
+
+https://www.geekyhacker.com/2020/03/22/download-youtube-videos-in-qutebrowser/
+
+https://github.com/kasramp/mydotfiles/blob/master/.config/qutebrowser/config.py
+
+{{{code: lang="sh" linenumbers="False"
+url.searchengines = {"gh": "https://github.com/search?q={}", "d": "https://duckduckgo.com/?q={}", "g": "https://www.google.com/search?hl=en&q={}", "yt": "https://www.youtube.com/results?search_query={}", "arx": "https://arxiv.org/search/?query={}", "w": "https://en.wikipedia.org/wiki/Special:Search/{}", "DEFAULT": "https://duckduckgo.com/?q={}", "a": "https://wiki.archlinux.org/?search={}", "wa": "https://www.wolframalpha.com/input/?i={}", "jl": "https://docs.julialang.org/en/stable/search/?q={}"}
+}}}

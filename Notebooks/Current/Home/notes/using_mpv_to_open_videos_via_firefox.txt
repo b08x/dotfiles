@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-02T03:29:05-05:00
+
+====== using mpv to open videos via firefox ======
+//Wednesday 02 December 2020//
+@systems
+
+Open With extension
+
+	Install Open With add-on.
+	Go to Add-ons > Open With > Preferences.
+	Proceed with instructions to install a file in your system and test the installation.
+	Click Add browser.
+	In the dialog write a name for this menu entry and command to start a video streaming capable player (e.g. /usr/bin/mpv).
+	(Optional step) Add needed arguments to the player (e.g. you may want --force-window --ytdl for mpv)
+	Right click on links or visit pages containing videos. Select newly created entry from Open With's menu and if the site is supported, the player will open as expected.
+
+The same procedure can be used to associate video downloaders such as youtube-dl. 

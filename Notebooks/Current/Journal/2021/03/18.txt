@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-18T22:31:59-04:00
+
+====== Thursday 18 Mar 2021 ======
+
+
+pihole admin password:
+
+d1SxrXb2
+
+Please don't hack into our network. Thank you.

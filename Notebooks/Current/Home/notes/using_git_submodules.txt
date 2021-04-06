@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:47:04-04:00
+
+====== using git submodules ======
+//^{Tuesday 27 October 2020}//
+@git @tips
+
+execute 'git submodule update' after pushing a commit within a submodule'
+
+
+
+
+git submodule update --init --recursive

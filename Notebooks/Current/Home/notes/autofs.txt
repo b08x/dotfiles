@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T07:50:14-04:00
+
+====== autofs ======
+//^{Tuesday 27 October 2020}//
+@sysconfig @admin @bender
+
+~~TODO: configure autofs fer hosts to access bender~~
+
+
+
+

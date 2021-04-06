@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-30T00:22:28-04:00
+
+====== pi ======
+Created Wednesday 30 September 2020
+
+Currently, piratebot.qbase.org is running retropie on a pi4
+
+Attached, is a digital to analog convertor (DAC) with 4 push buttons and an lcd screen
+
+Now I understand why I don't usually stop to document this sort of thing. It makes easier sense in 'the head'. 
+
+"of course it's a dac" 
+"what's a dac?" 
+"oh, I don't know" 
+looks up 
+"oh. it stands for digital to analog convertor..."
+
+Anyway, supposedly provides for higher sound quality. 
+
+To enable the DAC card itself (after or during doing all the usually linux setup stuff;
+ {{{code: lang="ruby" linenumbers="True"
+# Enable SPI
+raspi-config nonint do_spi 0
+
+# Add necessary lines to config.txt (if they don't exist)
+add_to_config_text "gpio=25=op,dh" /boot/config.txt
+add_to_config_text "dtoverlay=hifiberry-dac" /boot/config.txt
+}}}
+
+
+https://github.com/pimoroni/pirate-audio
+
+
+
+===== installing mate =====
+@sysconfig @ui
+
+https://www.raspberrypi.org/forums/viewtopic.php?t=133691
+https://www.raspberrypi.org/forums/viewtopic.php?t=260974
+
+{{{code: lang="sh" linenumbers="False"
+sudo apt-get install --no-install-recommends xserver-xorg
+sudo apt-get install --no-install-recommends xinit
+sudo apt-get install mate-desktop-environment-core
+sudo reboot
+
+# then after the pi user has auto logged in to run level three
+startx
+}}}
+
+
+If a login manager is desired at some point, sudo apt install lightdm 
+
+* performance is a bit slugish, so will wait until we can pick up a faster SD card
+

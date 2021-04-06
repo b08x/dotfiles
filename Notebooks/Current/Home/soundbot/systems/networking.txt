@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-24T03:26:50-04:00
+
+====== networking ======
+Created Wednesday 24 March 2021
+
+https://github.com/apohl79/audiogridder
+
+For parellel processing of plugins. Requires newer version of libraries than what is availble on the current debian system. For this I'd recommend an arch box...
+

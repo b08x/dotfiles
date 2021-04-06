@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-16T20:16:15-04:00
+
+====== xfce4 and i3 ======
+Created Tuesday 16 March 2021
+
+http://feeblenerd.blogspot.com/2015/11/pretty-i3-with-xfce.html
+
+@xfce
+
+https://www.xfce-look.org/browse/cat/
+
+# bordless windows
+https://www.gnome-look.org/p/1016214/
+
+
+https://wiki.archlinux.org/index.php/Xfwm#Window_tiling
+Window tiling
+Xfwm can "tile" a window automatically when it is moved to an edge of the screen. It does so by resizing it to fit the top half of the screen. To enable or disable this behaviour with xfconf, run:
+
+$ xfconf-query -c xfwm4 -p /general/tile_on_move -s false
+$ xfconf-query -c xfwm4 -p /general/tile_on_move -s true
+Alternatively, (un)check Window Manager Tweaks > Accessibility > Automatically tile windows when moving toward the screen edge.
+
+https://i.imgur.com/LUjIWTQ.png55
+

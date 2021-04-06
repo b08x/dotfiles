@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2021-03-16T14:36:09-04:00
+
+====== 0315 ======
+Created Tuesday 16 March 2021
+
+polkit stuff;
+
+https://wiki.debian.org/PolicyKit
+
+The structure of the file has changed. I'm going to reboot now and see if this works. 
+
+that didn't work. so im trying the action wildcard
+
+https://askubuntu.com/questions/98006/how-do-i-prevent-policykit-from-asking-for-a-password
+
+That worked.

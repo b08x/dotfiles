@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-20T03:54:24-05:00
+
+====== 1731 alsa bluetooth ======
+@bluetooth @alsa
+
+https://forum.armbian.com/topic/6480-bluealsa-bluetooth-audio-using-alsa-not-pulseaudio/?do=findComment&comment=64416

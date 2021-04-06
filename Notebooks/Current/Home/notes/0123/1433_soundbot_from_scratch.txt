@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-01-23T14:36:55-05:00
+
+====== 2301:1433 ======
+@system
+
+https://crux.nu/Main/Handbook3-6
+
+https://wiki.archlinux.org/index.php/Arch_Build_System

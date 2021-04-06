@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-02T03:01:32-04:00
+
+====== Friday 02 Oct 2020 ======
+
+====== stuff installed in reaper ======
+@reaper
+
+{{{code: lang="cpp" linenumbers="False"
+ReaTeam JSFX/Routing/FOA to DoubleMidSide [new]
+v1.0 by Michael Fewkes – October 25 2017
+  Initial release
+
+ReaTeam JSFX/Misc/LiveBeatRepeater [new]
+v1.12 by brumbear – October 01 2020
+  - 3 different loop fade algorithms selectable by user
+  - Updated Fx routing options
+  - Added loop start, loop end and playhead indicators (cannot be manipulated yet)
+  - Improve memory management
+  - Fixed bug during loop fade out when reversing
+
+ReaTeam JSFX/Misc/LiveScrubberDucky [new]
+v0.7 by brumbear – June 21 2020
+  - Improved X-fade algorithm (less crackle)
+  - Fix bug when switching to "Off": Do not reset scrub start position, instead allow restarting scrubbing from any position
+
+ReaTeam JSFX/MIDI/MIDI controller for S8 looper with fade in and out [new]
+v1.0 by Bert Bouwhuis – March 18 2019
+  No changelog
+
+MPL Scripts/MIDI editor/Select high pitch MIDI notes [new]
+v1.0 by MPL – December 02 2015
+  No changelog
+
+ReaTeam JSFX/Synth/Shepard Paradoxical Synth [new]
+v1.02 by T.Rochebois – August 14 2016
+  Initial release
+}}}
+
+
+
+====== finishing the compilation of Soundbot by a certain time ======
+
+The idea of commiting to a "production schedule" of finishing work on compiling Soundbot (which we'll define later) by the end of this year, and from that point on turning focus on composition/production/engineering/performing of music. 
+
+Part of compiling soundbot is learning the tools I'm choosing to use for the time being. Right now, I think the toolset is pretty great. 
+I do enjoy trying out new applications, however I think that unless I'm looking for something specfic, what I have now suits the desired focusus. 
+
+Workflows for each of the disclpines;
+compostion; think more pot and cookies and mushrooms
+production/eng; amphetimines and coffee and cookies
+performing; pot, cookies, amphmethines and cofffee
+
+
+
+
