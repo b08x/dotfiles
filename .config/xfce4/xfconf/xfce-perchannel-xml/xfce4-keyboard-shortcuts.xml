@@ -29,7 +29,7 @@
       <property name="Super_R" type="string" value="exo-open --launch FileManager"/>
       <property name="Search" type="string" value="terminator -b -e &quot;googler&quot;"/>
       <property name="&lt;Super&gt;Home" type="string" value="firefox"/>
-      <property name="Menu" type="string" value="xfce4-popup-whiskermenu"/>
+      <property name="ISO_Next_Group" type="string" value="xfce4-popup-whiskermenu"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

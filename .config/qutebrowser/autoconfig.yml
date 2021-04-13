@@ -3,5 +3,5 @@
 
 config_version: 2
 settings:
-  content.proxy:
-    global: http://localhost:8118
+  url.start_pages:
+    global: https//google.com

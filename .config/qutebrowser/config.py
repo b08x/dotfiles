@@ -105,7 +105,7 @@ c.url.searchengines = {'DEFAULT': 'https://google.com/?q={}', 'wa': 'https://wik
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'file:///home/b08x/Notebooks/Current'
+c.url.start_pages = 'https://google.com'
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
