@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2020-12-30T11:01:22-05:00
-
-====== 30121100 pixiecore example ======
-@pxe 
-https://gist.github.com/probonopd/3545a8bbdd4e8523f2ce4ae8c6891085
-
-pixiecore quick xyz --dhcp-no-bind

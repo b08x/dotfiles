@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2020-10-27T01:07:17-04:00
-
-====== audio ======
-Created Tuesday 27 October 2020
-
-https://respeaker.io/4_mic_array/
-

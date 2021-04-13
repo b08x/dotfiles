@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2021-03-24T10:41:27-04:00
-
-====== 0324:1040 ruby unless ======
-@ruby
-
-https://www.geeksforgeeks.org/ruby-unless-statement-and-unless-modifier/
-

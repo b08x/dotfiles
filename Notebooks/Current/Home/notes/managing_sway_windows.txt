@@ -1,8 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2020-12-02T01:31:39-05:00
-
-====== managing sway windows ======
-//Wednesday 02 December 2020//
-@sway @ui
-https://gitlab.com/xPMo/dotfiles.gui/-/raw/master/.config/sway/conf.d/3-assigns

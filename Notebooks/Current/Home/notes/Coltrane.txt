@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2021-03-24T03:53:17-04:00
-
-====== Coltrane ======
-Created Wednesday 24 March 2021
-

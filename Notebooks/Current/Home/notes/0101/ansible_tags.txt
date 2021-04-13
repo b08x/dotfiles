@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2021-01-01T05:41:02-05:00
-
-====== ansible tags ======
-Created Friday 01 January 2021
-
-  play #1 (all): setup	TAGS: []
-	  TASK TAGS: [ansible, apm_pkgs, atom, audio_tools, aur_pkgs,base_pkgs, autofs, autosync, autosyncscript, backgrounds, base_pkgs, bluray, browser_pkgs, browsers, daw, deadbeef, deadbeef_plugins, desktop, docker, docker_pkgs, dotfiles, editor_pkgs, facts, filemanager_pkgs, greetd, grub, gtkgreet, install, mako, media, media_pkgs, neovim_pkgs, obs_pkgs, oomox, packages, plugins, polkit, portable,autosync, printer, printer_pkgs, profile, pulse, rvm, search, search_pkgs, sonicpi, sonicpitool, studio, studio_pkgs, sudoers, sway, sway_etc, sway_pkgs, synth, system, systemd, theme_pkgs, tuigreet, ui, ui_pkgs, workstation]

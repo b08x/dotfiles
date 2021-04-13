@@ -2,8 +2,8 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="oomox-eboda_oomoox"/>
-    <property name="IconThemeName" type="string" value="oomox-eboda_oomoox"/>
+    <property name="ThemeName" type="string" value="AVL-Materia-Dark"/>
+    <property name="IconThemeName" type="string" value="Numix"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
@@ -23,8 +23,8 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="FontName" type="string" value="Hack Nerd Font 11"/>
-    <property name="MonospaceFontName" type="string" value="CodeNewRoman Nerd Font Mono 10"/>
+    <property name="FontName" type="string" value="Hack Nerd Font 12"/>
+    <property name="MonospaceFontName" type="string" value="Hack Nerd Font Mono 12"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="string" value="both-horiz"/>
@@ -35,6 +35,7 @@
     <property name="CursorThemeName" type="empty"/>
     <property name="CursorThemeSize" type="empty"/>
     <property name="DecorationLayout" type="empty"/>
+    <property name="ColorScheme" type="string" value="selected_bg_color:#398ee7;selected_fg_color:#eeeeee;"/>
   </property>
   <property name="Gdk" type="empty">
     <property name="WindowScalingFactor" type="int" value="1"/>

@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2020-10-27T04:58:49-04:00
-
-====== Journal ======
-Created Tuesday 27 October 2020
-
-Sort of like a blog. Drafts can go here, random notes, tasks
-

@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2020-11-14T22:17:31-05:00
-
-====== Saturday 14 Nov 2020 ======
-
-Doing stuff on Novemeber 14th. 

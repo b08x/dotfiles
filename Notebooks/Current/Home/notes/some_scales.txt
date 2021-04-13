@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2020-12-01T13:21:22-05:00
-
-====== some scales ======
-//Tuesday 01 December 2020//
-@music @compostion
-
-g gs as c cs ds e
