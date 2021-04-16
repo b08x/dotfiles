@@ -18,7 +18,7 @@ filebrowser.coverart_scale 1
 filebrowser.coverart_size 24
 filebrowser.defaultpath 
 filebrowser.enabled 1
-filebrowser.expanded_rows file:///home/b08x/bender file:///home/b08x/bender/archive file:///home/b08x/bender/share file:///home/b08x/bender/share/media file:///home/b08x/bender/share/media/music/2%20Unlimited/Greatest%20Hits%20(2008) file:///home/b08x/bender/share/to_sort file:///home/b08x/bender/share/to_sort/music_import file:///home/b08x/bender/share/to_sort/music_import/A%20Tribe%20Called%20Quest file:///home/b08x/bender/share/media/music
+filebrowser.expanded_rows file:///home/b08x/bender file:///home/b08x/bender/archive file:///home/b08x/bender/share file:///home/b08x/bender/share/media file:///home/b08x/bender/share/media/music/2%20Unlimited/Greatest%20Hits%20(2008) file:///home/b08x/bender/share/to_sort file:///home/b08x/bender/share/to_sort/music_import file:///home/b08x/bender/share/to_sort/music_import/A%20Tribe%20Called%20Quest file:///home/b08x/bender/share/media/music file:///home/b08x/Library file:///home/b08x/Library/Sounds file:///home/b08x/Library/Sounds/samples file:///home/b08x/Library/Sounds/to_process/drum_kits file:///home/b08x/Library/Sounds/samples/instruments/brass/FrenchHorn/HornSect file:///home/b08x/Library/Sounds/samples/instruments/brass/FrenchHorn/french_horns file:///home/b08x/Library/Sounds/samples/instruments file:///home/b08x/Library/Sounds/samples/loops/Beatport%20Sounds%20Loops/Construction_kits file:///home/b08x/Library/Sounds/samples/loops/Beatport%20Sounds%20Loops/Construction_kits/Been_Ben_F%23_128bpm file:///home/b08x/Library/Sounds/samples/sfx file:///home/b08x/Library/Sounds/samples/soundscapes file:///home/b08x/Library/Sounds/soundfonts
 filebrowser.extra_bookmarks $HOME/.config/deadbeef/bookmarks
 filebrowser.fgcolor 
 filebrowser.fgcolor_selected 
@@ -41,8 +41,10 @@ filebrowser.sidebar_width 220
 filebrowser.sort_treeview 1
 filebrowser.treelines 0
 filechooser.lastdir file:///home/b08x/bender/share/media/music/Singles
-gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"514","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"274","align":"1","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"}]
-gtkui.layout.0.6.2 hsplitter locked=0 ratio=0.230448 pos=0 size2=0 {vsplitter locked=0 ratio=0.558263 pos=0 size2=0 {pltbrowser {} filebrowser {} } vsplitter locked=0 ratio=0.553571 pos=0 size2=0 {vsplitter locked=0 ratio=0.393130 pos=0 size2=0 {musical_spectrum {} waveform_seekbar {} } hsplitter locked=0 ratio=0.745455 pos=0 size2=0 {playlist hideheaders=0 width=1097 {} placeholder {} } } } 
+filechooser.playlist.lastdir file:///home/b08x/Workspace/soundbot
+gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"},{"title":"Custom","id":"9","format":"%path%","sort_format":"","size":"903","align":"0","color_override":"0","color":"#ffd9b377"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"165","align":"0","color_override":"0","color":"#ffd9b377"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"283","align":"0","color_override":"0","color":"#ff000000"},{"title":"Channels","id":"9","format":"%channels%","sort_format":"","size":"100","align":"0","color_override":"0","color":"#ffd9b377"},{"title":"Codec","id":"-1","format":"%codec%","sort_format":"","size":"100","align":"0","color_override":"0","color":"#ffd9b377"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"119","align":"0","color_override":"0","color":"#ff000000"}]
+gtkui.last_playlist_save_name /home/b08x/Workspace/soundbot/loops.m3u
+gtkui.layout.0.6.2 hsplitter locked=0 ratio=0.230448 pos=0 size2=0 {vsplitter locked=0 ratio=0.358272 pos=0 size2=0 {pltbrowser {} filebrowser {} } vsplitter locked=0 ratio=0.553571 pos=0 size2=0 {vsplitter locked=0 ratio=0.393130 pos=0 size2=0 {musical_spectrum {} waveform_seekbar {} } playlist hideheaders=0 width=1471 {} } } 
 gtkui.playlist.group_by_tf "$directory(%path%)"
 gtkui.sortby_fmt_v2 $directory(%path%)
 gtkui.sortby_order 0
@@ -83,10 +85,10 @@ hotkey.key30 b 0 0 next
 hotkey.key31 n 0 0 playback_random
 hotkey.key32 "Ctrl k" 0 0 toggle_stop_after_album
 hotkeys_created 1
-logwindow.geometry.h 720
-logwindow.geometry.w 621
-logwindow.geometry.x -771
-logwindow.geometry.y 342
+logwindow.geometry.h 796
+logwindow.geometry.w 688
+logwindow.geometry.x 151
+logwindow.geometry.y 142
 mainwin.geometry.h 712
 mainwin.geometry.maximized 1
 mainwin.geometry.w 1366
@@ -101,27 +103,40 @@ output_plugin pulseaudio
 playback.loop 1
 playback.order 2
 playback.volume -6.006493
-playlist.current 0
-playlist.cursor.0 9
-playlist.cursor.1 -1
-playlist.cursor.2 -1
-playlist.cursor.3 7067
-playlist.cursor.4 0
-playlist.cursor.5 0
+playlist.current 8
+playlist.cursor.0 -1
+playlist.cursor.1 0
+playlist.cursor.2 91
+playlist.cursor.3 21
+playlist.cursor.4 1540
+playlist.cursor.5 1688
+playlist.cursor.6 237
+playlist.cursor.7 0
+playlist.cursor.8 0
+playlist.cursor.9 0
 playlist.pin.groups 1
-playlist.scroll.0 -9
+playlist.scroll.0 0
 playlist.scroll.1 0
-playlist.scroll.2 0
-playlist.scroll.3 187429
-playlist.scroll.4 0
-playlist.scroll.5 0
+playlist.scroll.2 2309
+playlist.scroll.3 475
+playlist.scroll.4 38267
+playlist.scroll.5 43017
+playlist.scroll.6 13079
+playlist.scroll.7 0
+playlist.scroll.8 0
+playlist.scroll.9 0
 playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_current 1
 playlist.tab.00000 Default
-playlist.tab.00001 Singles
-playlist.tab.00002 trip01
-playlist.tab.00003 New Playlist
-playlist.tab.00004 New Playlist
+playlist.tab.00001 drumkits
+playlist.tab.00002 brass
+playlist.tab.00003 Percussion
+playlist.tab.00004 Piano
+playlist.tab.00005 Strings
+playlist.tab.00006 Winds
+playlist.tab.00007 Loops
+playlist.tab.00008 Media
+playlist.tab.00009 New Playlist
 prefwin.geometry.h 551
 prefwin.geometry.w 859
 prefwin.geometry.x 361
@@ -130,6 +145,10 @@ resume.paused 0
 resume.playlist -1
 resume.position -1.000000
 resume.track -1
+searchwin.geometry.h 150
+searchwin.geometry.w 450
+searchwin.geometry.x 733
+searchwin.geometry.y 439
 shellexec_config_wip [{"command": "flac -o", "title": "Edit/convert_to_flac", "name": "new_cmd", "flags": ["local", "single", "multiple"]}]
 spectrogram.color.gradient_00 65535 0 0
 spectrogram.color.gradient_01 65535 32896 0
@@ -147,8 +166,8 @@ streamer.samplerate_mult_44 44100
 streamer.samplerate_mult_48 48000
 trkproperties.geometry.h 418
 trkproperties.geometry.w 1029
-trkproperties.geometry.x 573
-trkproperties.geometry.y 499
+trkproperties.geometry.x 576
+trkproperties.geometry.y 231
 waveform.bg_alpha 65535
 waveform.bg_color_b 13878
 waveform.bg_color_g 13364

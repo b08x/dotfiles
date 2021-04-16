@@ -105,8 +105,8 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-# bindsym $mod+9 workspace $ws9
-# bindsym $mod+0 workspace $ws10
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 bindcode $mod+Mod2+$KP_1 workspace $ws1
 bindcode $mod+Mod2+$KP_2 workspace $ws2
@@ -116,8 +116,8 @@ bindcode $mod+Mod2+$KP_5 workspace $ws5
 bindcode $mod+Mod2+$KP_6 workspace $ws6
 bindcode $mod+Mod2+$KP_7 workspace $ws7
 bindcode $mod+Mod2+$KP_8 workspace $ws8
-# bindcode $mod+Mod2+$KP_9 workspace $ws9
-# bindcode $mod+Mod2+$KP_0 workspace $ws10
+bindcode $mod+Mod2+$KP_9 workspace $ws9
+bindcode $mod+Mod2+$KP_0 workspace $ws10
 
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -127,8 +127,8 @@ bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
-# bindsym $mod+Shift+9 move container to workspace $ws9
-# bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 bindcode $mod+Shift+Mod2+$KP_1 move container to workspace $ws1
 bindcode $mod+Shift+Mod2+$KP_2 move container to workspace $ws2
@@ -138,8 +138,8 @@ bindcode $mod+Shift+Mod2+$KP_5 move container to workspace $ws5
 bindcode $mod+Shift+Mod2+$KP_6 move container to workspace $ws6
 bindcode $mod+Shift+Mod2+$KP_7 move container to workspace $ws7
 bindcode $mod+Shift+Mod2+$KP_8 move container to workspace $ws8
-# bindcode $mod+Shift+Mod2+$KP_9 move container to workspace $ws9
-# bindcode $mod+Shift+Mod2+$KP_0 move container to workspace $ws10
+bindcode $mod+Shift+Mod2+$KP_9 move container to workspace $ws9
+bindcode $mod+Shift+Mod2+$KP_0 move container to workspace $ws10
 
 bindsym $alt+Shift+Left move workspace to output left
 bindsym $alt+Shift+Right move workspace to output right
@@ -209,9 +209,8 @@ exec_always --no-startup-id i3-msg 'exec redshift -x; exec redshift -b 0.9 -O 60
 ######################################
 bindsym $mod+Return $exec terminator -b
 
-#bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
+bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
 bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
-bindsym $mod+F13 $exec xfce4-appfinder
 bindsym Menu $exec "~/.config/rofi/bin/launcher_text"
 
 bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window"
@@ -239,12 +238,12 @@ for_window [class="(?i)vmpk"] floating enable, move to scratchpad, scratchpad sh
 for_window [class="(?i)jack-keyboard"] floating enable, move to scratchpad, scratchpad show
 #Assign Workspaces:
 
-assign [class="(?i)sonic-pi"] $ws1
-assign [class="(?i)REAPER"] $ws2
-assign [class="^carla-jack-multi"] $ws3
-assign [class="(?i)Hydrogen"] $ws4
-assign [class="^Deadbeef"] $ws5
-assign [class="^sononym"] $ws5
-assign [class="(?i)raysession"] $ws6
-assign [title="(?i)EBU R128 Meter"] $ws6
-assign [class="(?i)qsampler"] $ws6
+assign [class="(?i)sonic-pi"] $ws6
+assign [class="(?i)REAPER"] $ws7
+assign [class="(?i)carla-jack-multi"] $ws8
+assign [class="(?i)Hydrogen"] $ws6
+assign [class="^Deadbeef"] $ws8
+assign [class="^sononym"] $ws8
+assign [class="(?i)raysession"] $ws1
+assign [title="(?i)EBU R128 Meter"] $ws1
+assign [class="(?i)qsampler"] $ws2

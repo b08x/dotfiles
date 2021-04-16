@@ -39,7 +39,7 @@ export PAGER=less
 export NO_AT_BRIDGE=1 
 
 export VAMP_PATH="$HOME/.vamp"
-export LADSPA_PATH="/usr/lib/ladsp"
+export LADSPA_PATH="/usr/lib/ladspa"
 
 export ANSIBLE_HOME="$HOME/Workspace/ansible"
 export ANSIBLE_CONFIG="$HOME/Workspace/ansible/ansible.cfg"

@@ -2,7 +2,7 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="oomox-eboda"/>
+    <property name="ThemeName" type="string" value="AVL-Materia-Dark"/>
     <property name="IconThemeName" type="string" value="Numix"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
@@ -38,7 +38,7 @@
     <property name="ColorScheme" type="string" value="selected_bg_color:#398ee7;selected_fg_color:#eeeeee;"/>
   </property>
   <property name="Gdk" type="empty">
-    <property name="WindowScalingFactor" type="int" value="1"/>
+    <property name="WindowScalingFactor" type="int" value="2"/>
   </property>
   <property name="Xfce" type="empty">
     <property name="LastCustomDPI" type="int" value="96"/>

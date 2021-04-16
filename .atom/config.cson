@@ -25,7 +25,7 @@
       "atom-material-syntax"
     ]
   editor:
-    fontFamily: "BlexMono Nerd Font"
+    fontFamily: "Hack Nerd Font"
     fontSize: 17
     showLineNumbers: false
     softWrap: true
