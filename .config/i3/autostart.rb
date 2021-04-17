@@ -42,4 +42,5 @@ end
 
 forkoff("nitrogen --restore")
 
+forkoff("tilda")
 forkoff("guake")

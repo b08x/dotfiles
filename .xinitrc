@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 export HOSTNAME=`hostname`
 
 compton &
 xmodmap -e "clear lock" -e "keysym Caps_Lock = F13"
 xmodmap -e "remove Mod1 = Alt_L" -e "add Mod3 = Alt_L"
 numlockx on
-#xinput --set-prop 9 296 2.3
+exec i3
