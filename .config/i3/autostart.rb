@@ -29,8 +29,8 @@ system("notify-send 'starting a2jmidid'")
 forkoff("a2jmidid -e")
 sleep 1
 
-system("notify-send 'starting pulse'")
-forkoff("pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1")
+#system("notify-send 'starting pulse'")
+#forkoff("pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1")
 
 unless host == "ninjabot"
   forkoff("touchpad-indicator &")
