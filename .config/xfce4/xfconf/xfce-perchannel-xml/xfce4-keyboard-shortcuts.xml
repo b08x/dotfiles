@@ -177,13 +177,13 @@
       <property name="&lt;Super&gt;KP_9" type="string" value="workspace_9_key"/>
       <property name="&lt;Super&gt;KP_0" type="string" value="workspace_10_key"/>
       <property name="&lt;Super&gt;Up" type="string" value="tile_up_key"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;Up" type="string" value="tile_up_left_key"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;Right" type="string" value="tile_up_right_key"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;Left" type="string" value="tile_down_left_key"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;Down" type="string" value="tile_down_right_key"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;Menu" type="string" value="show_desktop_key"/>
       <property name="&lt;Super&gt;Escape" type="string" value="hide_window_key"/>
       <property name="&lt;Super&gt;Tab" type="string" value="cycle_windows_key"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;Up" type="string" value="tile_up_left_key"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;Right" type="string" value="tile_up_right_key"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;Left" type="string" value="tile_down_left_key"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;Down" type="string" value="tile_down_right_key"/>
     </property>
   </property>
   <property name="providers" type="array">
