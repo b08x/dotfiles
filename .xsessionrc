@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 export HOSTNAME=`hostname`
 
-compton &
+compton --backend glx --vsync opengl-swc &
 xmodmap -e "clear lock" -e "keysym Caps_Lock = F13"
 xmodmap -e "remove Mod1 = Alt_L" -e "add Mod3 = Alt_L"
 numlockx on

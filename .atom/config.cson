@@ -26,7 +26,6 @@
     ]
   editor:
     fontFamily: "Hack Nerd Font"
-    fontSize: 17
     showLineNumbers: false
     softWrap: true
     softWrapAtPreferredLineLength: true
