@@ -22,10 +22,11 @@
     telemetryConsent: "limited"
     themes: [
       "atom-dark-ui"
-      "atom-material-syntax"
+      "solarized-dark-syntax"
     ]
   editor:
     fontFamily: "Hack Nerd Font"
+    fontSize: 15
     showLineNumbers: false
     softWrap: true
     softWrapAtPreferredLineLength: true
