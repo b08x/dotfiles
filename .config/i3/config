@@ -11,7 +11,8 @@ set $i3home "$HOME/.config/i3"
 
 set $swallow "/usr/local/bin/swallow"
 
-font pango:Hack Nerd Font 11
+#font pango:Hack Nerd Font 11
+font -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
 
 default_border pixel 0
 default_floating_border normal
@@ -45,16 +46,16 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace $ws1 output HDMI1
-workspace $ws2 output HDMI1
-workspace $ws3 output HDMI1
-workspace $ws4 output HDMI1
-workspace $ws5 output HDMI1
-workspace $ws6 output HDMI2
-workspace $ws7 output HDMI2
-workspace $ws8 output HDMI2
-workspace $ws9 output HDMI2
-workspace $ws10 output HDMI2
+workspace $ws1 output HDMI2
+workspace $ws2 output HDMI2
+workspace $ws3 output HDMI2
+workspace $ws4 output HDMI2
+workspace $ws5 output HDMI2
+workspace $ws6 output HDMI1
+workspace $ws7 output HDMI1
+workspace $ws8 output HDMI1
+workspace $ws9 output HDMI1
+workspace $ws10 output HDMI1
 
 
 ######################################
@@ -229,6 +230,10 @@ bindsym XF86AudioPause $exec deadbeef --toggle-pause
 bindsym XF86AudioNext $exec deadbeef --next
 bindsym XF86AudioPrev $exec deadbeef --previous
 
+
+######################################
+# ---{ window assignments }---
+######################################
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
