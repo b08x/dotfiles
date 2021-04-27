@@ -9,9 +9,10 @@ set $exec exec --no-startup-id
 
 set $i3home "$HOME/.config/i3"
 
-set $swallow "/usr/local/bin/swallow"
+set $swallow /usr/local/bin/swallow
 
-font pango:Hack Nerd Font 11
+#font pango:Hack Nerd Font 11
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 default_border pixel 0
 default_floating_border normal
@@ -45,16 +46,16 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace $ws1 output HDMI1
-workspace $ws2 output HDMI1
-workspace $ws3 output HDMI1
-workspace $ws4 output HDMI1
-workspace $ws5 output HDMI1
-workspace $ws6 output HDMI2
-workspace $ws7 output HDMI2
-workspace $ws8 output HDMI2
-workspace $ws9 output HDMI2
-workspace $ws10 output HDMI2
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output eDP-1
+workspace $ws4 output eDP-1
+workspace $ws5 output eDP-1
+workspace $ws6 output HDMI-1
+workspace $ws7 output HDMI-1
+workspace $ws8 output HDMI-1
+workspace $ws9 output HDMI-1
+workspace $ws10 output HDMI-1
 
 
 ######################################
@@ -181,6 +182,30 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
 
+# (plus the system information i3status finds out, if available)
+bar {
+		font pango:Hack Nerd Font Mono 11, FontAwesome 11
+    #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1, FontAwesome 11
+		status_command "i3blocks -c ~/.config/i3/i3blocks.conf"
+    position bottom
+    tray_output primary
+    tray_padding 0
+    strip_workspace_numbers yes
+
+    colors {
+      background #282A36
+      statusline #F8F8F2
+      separator  #44475A
+
+      focused_workspace  #44475A #44475A #ebf6c0
+      active_workspace   #282A36 #44475A #F8F8F2
+      inactive_workspace #282A36 #282A36 #BFBFBF
+      urgent_workspace   #FF5555 #FF5555 #F8F8F2
+      binding_mode       #FF5555 #FF5555 #F8F8F2
+    }
+
+}
+
 ######################################
 # ---{ autohide }---
 ######################################
@@ -200,10 +225,16 @@ client.background       #FFFFFF
 ######################################
 # ---{ autostart }---
 ######################################
-exec --no-startup-id "~/.screenlayout/$HOSTNAME"
-$exec ruby $HOME/.config/i3/autostart.rb
-$exec nitrogen --restore
-exec_always --no-startup-id i3-msg 'exec redshift -x; exec redshift -b 0.9 -O 6000K'
+exec_always --no-startup-id "~/.screenlayout/$HOSTNAME"
+
+$exec $swallow -d python3 $HOME/.config/i3/scripts/autotiling.py
+
+exec_always --no-startup-id nitrogen --restore
+
+$exec tilda
+
+$exec guake
+
 
 ######################################
 # ---{ application key bindings }---
@@ -216,10 +247,12 @@ bindsym Menu $exec "~/.config/rofi/bin/launcher_text"
 
 bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window"
 
+bindsym $mod+Shift+p $exec
+
 bindsym $mod+Home $exec google-chrome-stable %U
 bindsym $mod+End $exec atom
 bindcode $mod+Mod2+$KP_Enter $exec "guake --show -n 'ranger' -e ranger"
-bindcode $mod+Shift+Mod2+$KP_Enter $exec Thunar
+bindcode $mod+Shift+$KP_Enter $exec Thunar
 
 bindsym $mod+g $exec "guake --show -n 'goog' -e googler"
 bindsym $mod+Insert $exec zim --plugin quicknote
@@ -228,6 +261,14 @@ bindsym XF86AudioPlay $exec deadbeef --play
 bindsym XF86AudioPause $exec deadbeef --toggle-pause
 bindsym XF86AudioNext $exec deadbeef --next
 bindsym XF86AudioPrev $exec deadbeef --previous
+
+bindsym XF86MonBrightnessDown exec sudo brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec sudo brightnessctl set +5%
+
+######################################
+# ---{ window assignments }---
+######################################
+
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -249,7 +290,7 @@ for_window [title="MultiEncoder"] move to workspace $ws3;resize grow height 100 
 bindsym $mod+F5 floating enable; border none; resize set 800px 630px; sticky disable; move window to position 709 px 230 px
 
 for_window [class="^REAPER" title="Mixer"] move to workspace $ws2, focus
-for_window [class="^REAPER" title="^Docker"] move to workspace $ws2, focus
+#for_window [class="^REAPER" title="^Docker"] move to workspace $ws2, focus
 
 #for_window [class="^REAPER" title="(?i)VST"] move to workspace $ws3, focus, layout splitv, border pixel 1
 #for_window [class="^REAPER" title="(?i)VST: RoomEncoder"] floating enable;resize grow height 100 px
@@ -273,7 +314,7 @@ for_window [class="(?i)jack-keyboard"] floating enable, move to scratchpad, scra
 
 #Assign Workspaces:
 assign [class="(?i)sonic-pi"] $ws6
-assign [class="(?i)REAPER"] $ws6
+#assign [class="(?i)REAPER"] $ws6
 #assign [title="^Mixer"] $ws2
 #assign [title="^Toolbar"] $ws2
 

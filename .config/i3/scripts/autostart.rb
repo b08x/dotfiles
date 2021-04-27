@@ -12,9 +12,6 @@ host = host.strip
 
 swallow = "/usr/local/bin/swallow"
 
-blocks = File.join(ENV["HOME"], '.config', 'polybar', 'blocks', 'launch.sh')
-grayblocks = File.join(ENV["HOME"], '.config', 'polybar', 'grayblocks', 'launch.sh')
-
 forkoff("#{swallow} -d python3 $HOME/.config/i3/autotiling.py")
 
 system("notify-send 'starting sound services'")
@@ -29,18 +26,6 @@ system("notify-send 'starting a2jmidid'")
 forkoff("a2jmidid -e")
 sleep 1
 
-#system("notify-send 'starting pulse'")
-#forkoff("pulseaudio --log-target=syslog --daemonize --high-priority --realtime --exit-idle-time=-1")
-
-#unless host == "ninjabot"
-#  sleep 1
-#  forkoff("#{grayblocks}")
-#else
-#  forkoff("#{blocks}")
-#end
-forkoff("#{blocks}")
-
 forkoff("nitrogen --restore")
-
 forkoff("tilda")
 forkoff("guake")
