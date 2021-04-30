@@ -9,7 +9,7 @@ set $exec exec --no-startup-id
 
 set $i3home "$HOME/.config/i3"
 
-set $swallow "/usr/local/bin/swallow"
+set $swallow /usr/local/bin/swallow
 
 #font pango:Hack Nerd Font 11
 font -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
@@ -182,6 +182,29 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
 
+# bar {
+#     font pango:Hack Nerd Font Mono 11, FontAwesome 11
+#     #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1, FontAwesome 11
+#     status_command "i3blocks -c ~/.config/i3/i3blocks.conf"
+#     position bottom
+#     tray_output primary
+#     tray_padding 0
+#     strip_workspace_numbers yes
+#
+#     colors {
+#       background #282A36
+#       statusline #F8F8F2
+#       separator  #44475A
+#
+#       focused_workspace  #44475A #44475A #ebf6c0
+#       active_workspace   #282A36 #44475A #F8F8F2
+#       inactive_workspace #282A36 #282A36 #BFBFBF
+#       urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#       binding_mode       #FF5555 #FF5555 #F8F8F2
+#     }
+#
+# }
+
 ######################################
 # ---{ autohide }---
 ######################################
@@ -201,26 +224,38 @@ client.background       #FFFFFF
 ######################################
 # ---{ autostart }---
 ######################################
-exec --no-startup-id "~/.screenlayout/$HOSTNAME"
-$exec ruby $HOME/.config/i3/autostart.rb
-$exec nitrogen --restore
-exec_always --no-startup-id i3-msg 'exec redshift -x; exec redshift -b 0.9 -O 6000K'
+exec_always --no-startup-id "~/.screenlayout/$HOSTNAME"
+
+$exec $swallow -d python3 $HOME/.config/i3/scripts/autotiling.py
+
+exec_always --no-startup-id $HOME/.config/i3/scripts/polybar.sh
+
+exec_always --no-startup-id nitrogen --restore
+
+$exec tilda
+
+$exec guake
+
 
 ######################################
 # ---{ application key bindings }---
 ######################################
 bindsym $mod+Return $exec terminator -b
 
-bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
-bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
-bindsym Menu $exec "~/.config/rofi/bin/launcher_text"
+#bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
+#bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
+#bindsym Menu $exec "~/.config/rofi/bin/launcher_text"
+bindsym Menu $exec sgtk-menu
+bindsym $mod+d $exec sgtk-menu
 
 bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window"
+
+bindsym $mod+F13 --release $exec guake --toggle
 
 bindsym $mod+Home $exec google-chrome-stable %U
 bindsym $mod+End $exec atom
 bindcode $mod+Mod2+$KP_Enter $exec "guake --show -n 'ranger' -e ranger"
-bindcode $mod+Shift+Mod2+$KP_Enter $exec Thunar
+bindcode $mod+Shift+$KP_Enter $exec Thunar
 
 bindsym $mod+g $exec "guake --show -n 'goog' -e googler"
 bindsym $mod+Insert $exec zim --plugin quicknote
@@ -238,6 +273,8 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 #REAPER stuff
+
+for_window [class="REAPER"] focus child, layout tabbed, focus
 for_window [title="^Mixer"] floating disable, border pixel 1
 for_window [title="^Docker"] floating disable, border pixel 1
 for_window [title="^Toolbar"] floating disable, border pixel 1
