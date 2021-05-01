@@ -236,6 +236,9 @@ $exec tilda
 
 $exec guake
 
+$exec "jack_control start"
+$exec "a2j_control start"
+
 
 ######################################
 # ---{ application key bindings }---
@@ -245,8 +248,8 @@ bindsym $mod+Return $exec terminator -b
 #bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
 #bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
 #bindsym Menu $exec "~/.config/rofi/bin/launcher_text"
-bindsym Menu $exec sgtk-menu
-bindsym $mod+d $exec sgtk-menu
+bindsym Menu $exec "/usr/local/bin/sgtk-menu -w 330 -s 28 -y 25 &"
+bindsym $mod+d $exec "/usr/local/bin/sgtk-menu -w 330 -s 28 -y 25 &"
 
 bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window"
 

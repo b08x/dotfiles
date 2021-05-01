@@ -3,13 +3,17 @@ artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*f
 cli_add_playlist_name Default
 converter.bypass_same_format 0
 converter.dsp_preset -1
-converter.encoder_preset 4
-converter.output_folder /home/b08x
-converter.output_format 0
-converter.overwrite_action 0
+converter.encoder_preset 14
+converter.lastdir file:///home/b08x/test
+converter.output_folder /home/b08x/test
+converter.output_format 3
+converter.overwrite_action 2
+converter.preserve_folder_structure 1
 converter.retag_after_copy 0
-converter.write_to_source_folder 1
+converter.write_to_source_folder 0
 deadbeef_version 1.8.4
+ffmpeg.enable_all_exts 1
+ffmpeg.extensions aa3;oma;ac3;vqf;amr;tak;dsf;dff;wma;3gp;mp4;m4a
 filebrowser.autofilter 1
 filebrowser.bgcolor 
 filebrowser.bgcolor_selected 
@@ -103,10 +107,11 @@ network.proxy.port 8080
 output_plugin pulseaudio
 playback.loop 1
 playback.order 2
-playback.volume -12.14285
-playlist.current 9
+playback.volume -12.14284
+playlist.current 10
 playlist.cursor.0 -1
 playlist.cursor.1 0
+playlist.cursor.10 0
 playlist.cursor.2 91
 playlist.cursor.3 21
 playlist.cursor.4 1540
@@ -114,10 +119,11 @@ playlist.cursor.5 103
 playlist.cursor.6 237
 playlist.cursor.7 0
 playlist.cursor.8 0
-playlist.cursor.9 4
+playlist.cursor.9 2
 playlist.pin.groups 1
 playlist.scroll.0 0
 playlist.scroll.1 0
+playlist.scroll.10 0
 playlist.scroll.2 2309
 playlist.scroll.3 475
 playlist.scroll.4 38267
@@ -138,14 +144,15 @@ playlist.tab.00006 Winds
 playlist.tab.00007 Loops
 playlist.tab.00008 Media
 playlist.tab.00009 New Playlist
+playlist.tab.00010 New Playlist
 prefwin.geometry.h 551
 prefwin.geometry.w 884
 prefwin.geometry.x 361
 prefwin.geometry.y 113
 resume.paused 0
-resume.playlist -1
-resume.position -1.000000
-resume.track -1
+resume.playlist 9
+resume.position 62.720390
+resume.track 0
 searchwin.geometry.h 150
 searchwin.geometry.w 450
 searchwin.geometry.x 733
