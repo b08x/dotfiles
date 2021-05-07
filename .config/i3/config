@@ -246,10 +246,10 @@ $exec "a2j_control start"
 bindsym $mod+Return $exec terminator -b
 
 #bindsym $mod+F13 $exec "~/.config/rofi/bin/launcher_text"
-#bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
-#bindsym Menu $exec "~/.config/rofi/bin/launcher_text"
-bindsym Menu $exec "/usr/local/bin/sgtk-menu -w 330 -s 28 -y 25 &"
-bindsym $mod+d $exec "/usr/local/bin/sgtk-menu -w 330 -s 28 -y 25 &"
+bindsym $mod+d $exec "~/.config/rofi/bin/launcher_text"
+bindsym Menu $exec "~/.config/rofi/bin/launcher_text"
+#bindsym Menu $exec "/usr/local/bin/sgtk-menu -w 330 -s 28 -y 25 -d 0 &"
+#bindsym $mod+d $exec "/usr/local/bin/sgtk-menu -w 330 -s 28 -y 25 -d 0 &"
 
 bindsym $alt+Tab $exec "rofi -show-icons -modi windowcd,window,drun -show window"
 
@@ -281,23 +281,11 @@ for_window [class="REAPER"] focus child, layout tabbed, focus
 for_window [title="^Mixer"] floating disable, border pixel 1
 for_window [title="^Docker"] floating disable, border pixel 1
 for_window [title="^Toolbar"] floating disable, border pixel 1
-#for_window [title="(?i)IEM"] floating disable, border pixel 1
-
-
-#for_window [title="(?i)IEM"] floating enable, resize set 640 480, border pixel 1, focus
-#for_window [title="RoomEncoder"] move to workspace $ws3; workspace $ws3; layout splith; resize set 654px 262px
-for_window [title="RoomEncoder"] move to workspace $ws3; workspace $ws3; resize set 654px 262px
-for_window [title="MultiEncoder"] move to workspace $ws3;resize grow height 100 px
-#for_window [title="(?i)RoomEncoder"] move to workspace $ws8, focus
-#for_window [title="(?i)IEM"] move to workspace $ws8, focus, layout splith
 
 bindsym $mod+F5 floating enable; border none; resize set 800px 630px; sticky disable; move window to position 709 px 230 px
 
-for_window [class="^REAPER" title="Mixer"] move to workspace $ws2, focus
-for_window [class="^REAPER" title="^Docker"] move to workspace $ws2, focus
-
-#for_window [class="^REAPER" title="(?i)VST"] move to workspace $ws3, focus, layout splitv, border pixel 1
-#for_window [class="^REAPER" title="(?i)VST: RoomEncoder"] floating enable;resize grow height 100 px
+for_window [class="^REAPER" title="Mixer"] move to workspace $ws6, focus
+for_window [class="^REAPER" title="^Docker"] move to workspace $ws6
 
 for_window [class="(?i)raysession"] move to workspace 1, layout splith, focus
 for_window [title="(?i)EBU R128 Meter"] floating disable, border pixel 1
@@ -305,25 +293,15 @@ for_window [class="(?i)zita-mu1"] floating disable, border pixel 1
 
 for_window [class="(?i)sonic-pi"] border none
 
-#for_window [class="
-#WM_NAME(STRING) = "VST: RoomEncoder (IEM) (64ch) - Track 4
-
 #to disable window title for all windows
 #for_window [class="^.*"] border pixel 1
 
-
-
-for_window [class="(?i)vmpk"] floating enable, move to scratchpad, scratchpad show
+#for_window [class="(?i)vmpk"] floating enable, move to scratchpad, scratchpad show
 for_window [class="(?i)jack-keyboard"] floating enable, move to scratchpad, scratchpad show
 
 #Assign Workspaces:
 assign [class="(?i)sonic-pi"] $ws6
-assign [class="(?i)REAPER"] $ws6
-#assign [title="^Mixer"] $ws2
-#assign [title="^Toolbar"] $ws2
-
-#assign [title="(?i)IEM"] $ws3
-#assign [title="RoomEncoder"] $ws3
+assign [class="(?i)REAPER"] $ws1
 
 assign [title="^Carla-Multi-Client"] $ws5
 assign [class="(?i)Hydrogen"] $ws6
